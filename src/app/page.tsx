@@ -1,20 +1,115 @@
-import { Anton, Josefin_Sans, Rubik_Bubbles } from 'next/font/google'
-
-const font = Josefin_Sans({
-  weight: '400',
-  subsets: ['latin'],
-})
+import profile from "@/data/profile.json"
+import Link from "next/link"
+import Badge from "@/components/badge"
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className='m-auto'>
-        <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 before:lg:h-[360px] z-[-1]">
-          <h1 className={`${font.className} text-4xl`}>
-            Daniel Altaf
-          </h1>
+    <div>
+      <div>
+        <h1>{profile.name.first}</h1>
+        <h2>{profile.position}</h2>
+      </div>
+      <div className="flex flex-col md:flex-row gap-4">
+        <div className="md:order-1">
+          <div>
+            <Badge>Contact Info</Badge>
+            <h3>
+              Socials
+            </h3>
+            {
+              profile.social.map((item, index) => (
+                <p key={index}>
+                  <a href={item.link.join("")}>{item.show ? item.name : item.link[1]}</a>
+                </p>))}
+          </div>
+          <div>
+            <Badge>Work Experience</Badge>
+            {profile.experience.map((item, index) => (
+              <div key={index} className="mb-4">
+                <h3>{item.position}</h3>
+                <h3>{item.company}</h3>
+                <h4>{item.start.month} {item.start.year} to {item.end.month} {item.end.year} ({item.duration} months)</h4>
+                <ul>
+                  {item.contribution.map((item, i) => (
+                    <li key={i}>{item}</li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+          <div>
+            <Badge>Education History</Badge>
+            {profile.education.map((item, index) => (
+              <div key={index} className="mb-4">
+                <h3>
+                  {item.qualification} {item.course}
+                </h3>
+                <h4>{item.location} ({item.start.month} {item.start.year} - {item.end.month} {item.end.year})</h4>
+                <ul>
+                  {item.achievement.map((item, i) => (
+                    <li key={i}>{item.position}, {item.association}</li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+
+          </div>
+          <div>
+            <Badge>Volunteer Work and Interests</Badge>
+            {
+              profile.open_source.map((item, index) => (
+                <div key={index} className="mb-4">
+                  <Link href={item.site.join("")}>
+                    <h3>
+                      {item.name} ({item.site[1]})
+                    </h3>
+                  </Link>
+                  <p>{item.description}</p>
+                </div>
+              ))
+            }
+          </div>
+        </div>
+        <div className="md:order-2">
+          <div>
+            <Badge>Relevant Skills</Badge>
+            <h3>
+              Language:
+            </h3>
+            <ul className="mb-4">
+              {profile.skill.language.map((item, index) => (
+                <li key={index}>{item}</li>
+              ))}
+            </ul>
+            <h3>
+              Framework:
+            </h3>
+            <ul className="mb-4">
+              {profile.skill.framework.map((item, index) => (
+                <li key={index}>{item[0]} ({item[1]})</li>
+              ))}
+            </ul>
+            <h3>UI:</h3>
+            <ul className="mb-4">
+              {profile.skill.ui.map((item, index) => (
+                <li key={index}>{item}</li>
+              ))}
+            </ul>
+            <h3>Databases:</h3>
+            <ul className="mb-4">
+              {profile.skill.database.map((item, index) => (
+                <li key={index}>{item}</li>
+              ))}
+            </ul>
+            <h3>Others:</h3>
+            <ul className="mb-4">
+              {profile.skill.other.map((item, index) => (
+                <li key={index}>{item}</li>
+              ))}
+            </ul>
+          </div>
         </div>
       </div>
-    </main>
+    </div>
   )
 }
