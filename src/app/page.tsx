@@ -28,8 +28,7 @@ export default function Home() {
             <Badge>Work Experience</Badge>
             {profile.experience.map((item, index) => (
               <div key={index} className="mb-4">
-                <h3>{item.position}</h3>
-                <h3>{item.company}</h3>
+                <h3>{item.position} - <text className=" italic">{item.company}</text></h3>
                 <h4>{item.start.month} {item.start.year} to {item.end.month} {item.end.year} ({item.duration} months)</h4>
                 <ul>
                   {item.contribution.map((item, i) => (
