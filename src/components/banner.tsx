@@ -27,7 +27,7 @@ export default function Banner({ name, position, social }: BannerProps) {
             <div className="flex overflow-x-auto gap-4 md:justify-end my-4">
                 {
                     social.map((item, index) => (
-                        <a href={item.link.join("")}>
+                        <a key={index} href={item.link.join("")}>
                             <Image
                                 priority
                                 src={logo[index]}
