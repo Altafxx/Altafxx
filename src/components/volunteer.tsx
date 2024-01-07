@@ -14,7 +14,7 @@ export default function Volunteer({ open_source }: VolunteerProps) {
         <Badge>Volunteer Work and Interests</Badge>
         {
             open_source.map((item, index) => (
-                <div key={index} className="mb-4">
+                <div key={index} className="mb-4 text-left">
                     <Link href={item.site.join("")}>
                         <h3>
                             {item.name} ({item.site[1]})
