@@ -19,12 +19,12 @@ export default function Banner({ name, position, social }: BannerProps) {
     ]
 
     return (
-        <div className=" grid grid-cols-1 md:grid-cols-2">
+        <div className="text-center md:text-start grid grid-cols-1 md:grid-cols-2">
             <div>
                 <h1>{name}</h1>
                 <h2>{position}</h2>
             </div>
-            <div className="flex overflow-x-auto gap-4 md:justify-end my-4">
+            <div className="flex overflow-x-auto items-center justify-center gap-4 md:justify-end my-4">
                 {
                     social.map((item, index) => (
                         <a key={index} href={item.link.join("")}>

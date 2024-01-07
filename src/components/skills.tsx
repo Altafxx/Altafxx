@@ -15,7 +15,7 @@ interface SkillsProps {
 
 export default function Skills({ skill }: SkillsProps) {
     return (
-        <div>
+        <div className="text-left">
             <Badge>Relevant Skills</Badge>
             <h3>Language:</h3>
             <ul className="mb-4">

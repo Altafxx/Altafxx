@@ -12,7 +12,7 @@ interface ExperienceProps {
 };
 
 export default function Experience({ experience }: ExperienceProps) {
-    return <div>
+    return <div className="text-left">
         <Badge>Work Experience</Badge>
         {experience.map((item, index) => (
             <div key={index} className="mb-4">
