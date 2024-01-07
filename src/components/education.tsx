@@ -13,7 +13,7 @@ interface EducationProps {
 };
 
 export default function Education({ education }: EducationProps) {
-    return <div>
+    return <div className="text-left">
         <Badge>Education History</Badge>
         {education.map((item, index) => (
             <div key={index} className="mb-4">

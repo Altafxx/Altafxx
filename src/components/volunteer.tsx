@@ -10,11 +10,11 @@ interface VolunteerProps {
 };
 
 export default function Volunteer({ open_source }: VolunteerProps) {
-    return <div>
+    return <div className="text-left">
         <Badge>Volunteer Work and Interests</Badge>
         {
             open_source.map((item, index) => (
-                <div key={index} className="mb-4 text-left">
+                <div key={index} className={`${open_source.length != index + 1 ? "mb-4" : ""}`}>
                     <Link href={item.site.join("")}>
                         <h3>
                             {item.name} ({item.site[1]})
