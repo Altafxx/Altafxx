@@ -2,15 +2,16 @@ import Image from "next/image";
 
 export default function Stacks() {
     return (
-        <div className="text-center my-4">
+        <div className="text-center my-6">
+            <h1 className="my-2">Primary Toolbelt</h1>
             <div className="grid grid-cols-3 md:grid-cols-4 xl:grid-cols-7">
                 <div className="flex flex-col items-center justify-center col-span-1">
                     <Image
                         priority
-                        src="/images/logo/github.svg"
+                        src="/images/logo/git.svg"
                         height={64}
                         width={64}
-                        alt="Github"
+                        alt="Git"
                     />
                     <span className="text-lg mt-2">Github</span>
                 </div>
