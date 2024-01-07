@@ -1,6 +1,7 @@
 import profile from "@/data/profile.json"
 import Link from "next/link"
 import Badge from "@/components/badge"
+import Stacks from "@/components/stacks"
 
 export default function Home() {
   return (
@@ -9,6 +10,7 @@ export default function Home() {
         <h1>{profile.name.first}</h1>
         <h2>{profile.position}</h2>
       </div>
+      <Stacks />
       <div className="flex flex-col md:flex-row gap-4">
         <div className="md:order-1">
           <div>
