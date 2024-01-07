@@ -1,0 +1,184 @@
+{
+    "name": {
+        "first": "Daniel Altaf",
+        "last": "Hasnan"
+    },
+    "location": {
+        "city": "Rawang",
+        "country": "Malaysia"
+    },
+    "position": "Software Engineer",
+    "social": [
+        {
+            "name": "LinkedIn",
+            "show": true,
+            "link": [
+                "https://",
+                "linkedin.com/in/danielaltaf"
+            ]
+        },
+        {
+            "name": "GitHub",
+            "show": true,
+            "link": [
+                "https://",
+                "github.com/altafxx"
+            ]
+        },
+        {
+            "name": "Website",
+            "show": false,
+            "link": [
+                "https://",
+                "danielaltaf.dev"
+            ]
+        },
+        {
+            "name": "Email",
+            "show": false,
+            "link": [
+                "mailto:",
+                "altafhasnan@gmail.com"
+            ]
+        }
+    ],
+    "experience": [
+        {
+            "company": "Vireserve Sdn Bhd",
+            "position": "Software Engineer",
+            "start": {
+                "timestamp": 1677636000000,
+                "month": "Mac",
+                "year": 2023
+            },
+            "end": {
+                "timestamp": 1706436000000,
+                "month": "January",
+                "year": 2024
+            },
+            "duration": 11,
+            "contribution": [
+                "Development involvement for one of GLC census website",
+                "Development involvement for RTM ETVCMS",
+                "Development of Digital Security Platform",
+                "Development of CDN streaming engine",
+                "Involvement for Internal and SIRIM audit"
+            ]
+        },
+        {
+            "company": "Vireserve Sdn Bhd",
+            "position": "Intern",
+            "start": {
+                "timestamp": 1662948000000,
+                "month": "September",
+                "year": 2022
+            },
+            "end": {
+                "timestamp": 1677578400000,
+                "month": "February",
+                "year": 2023
+            },
+            "duration": 6,
+            "contribution": [
+                "Development involvement for VireVault",
+                "Involvement for Internal audit"
+            ]
+        }
+    ],
+    "education": [
+        {
+            "qualification": "Diploma",
+            "course": "Computer Science",
+            "location": "UiTM Cawangan Perlis",
+            "cgpa": 3.4,
+            "start": {
+                "month": "September",
+                "year": 2020
+            },
+            "end": {
+                "month": "February",
+                "year": 2023
+            },
+            "achievement": [
+                {
+                    "position": "Exco Multimedia",
+                    "association": "Jawatankuasa Perwakilan Non Resident"
+                },
+                {
+                    "position": "President",
+                    "association": "COSMITs"
+                },
+                {
+                    "position": "President",
+                    "association": "Game Master Clan"
+                }
+            ]
+        }
+    ],
+    "open_source": [
+        {
+            "name": "Cari Surau",
+            "site": [
+                "https://",
+                "carisurau.com"
+            ],
+            "description": "One stop platform for searching surau around Malaysia"
+        },
+        {
+            "name": "Malaysia API",
+            "site": [
+                "https://",
+                "malaysiaapi.danielaltaf.dev"
+            ],
+            "description": "Centralize API of open data from Government of Malaysia, Non Government Organization and third party sources."
+        }
+    ],
+    "skill": {
+        "language": [
+            "HTML, CSS, Javascript",
+            "Python",
+            "PHP",
+            "GoLang"
+        ],
+        "framework": [
+            [
+                "Next JS",
+                "React JS"
+            ],
+            [
+                "Laravel",
+                "PHP"
+            ],
+            [
+                "Flutter",
+                "Dart"
+            ],
+            [
+                "Express JS",
+                "Node JS / Javascript"
+            ],
+            [
+                "Gin",
+                "GoLang"
+            ]
+        ],
+        "ui": [
+            "Tailwind CSS",
+            "Bootstrap CSS",
+            "Shadcn UI"
+        ],
+        "database": [
+            "MySQL",
+            "PostgreSQL",
+            "Firestore"
+        ],
+        "other": [
+            "Windows & Linux",
+            "Postman / Curl",
+            "Google Console Platform",
+            "Nginx VOD Streaming",
+            "Figma",
+            "Technical Documentation"
+        ]
+    }
+}

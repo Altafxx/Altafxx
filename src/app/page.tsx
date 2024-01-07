@@ -1,20 +1,22 @@
-import { Anton, Josefin_Sans, Rubik_Bubbles } from 'next/font/google'
+import profile from "@/data/profile.json"
+import { Banner, Skills, Experience, Education, Volunteer, Stacks } from "@/components";
 
-const font = Josefin_Sans({
-  weight: '400',
-  subsets: ['latin'],
-})
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className='m-auto'>
-        <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 before:lg:h-[360px] z-[-1]">
-          <h1 className={`${font.className} text-4xl`}>
-            Daniel Altaf
-          </h1>
+    <div>
+      <Banner name={profile.name.first} position={profile.position} social={profile.social} />
+      <Stacks />
+      <div className="flex flex-col md:flex-row gap-4">
+        <div className="md:order-1">
+          <Experience experience={profile.experience} />
+          <Education education={profile.education} />
+          <Volunteer open_source={profile.open_source} />
+        </div>
+        <div className="md:order-2">
+          <Skills skill={profile.skill} />
         </div>
       </div>
-    </main>
+    </div>
   )
 }
