@@ -6,6 +6,7 @@ export default function Stacks() {
 
     return (
         <div className="group/container text-center my-3 py-3 bg-slate-700/15 hover:bg-slate-700/30 rounded-lg ring-2 ring-purple-800/50 hover:ring-purple-800/50 shadow-xl hover:shadow-purple-500 transition-all">
+
             <h1 className="my-2 bg-gradient-to-r from-purple-500 to-teal-300 hover:to-purple-500 hover:from-teal-300 bg-clip-text group-hover/container:text-transparent  shadow-lg transition-all">Primary Toolbelt</h1>
             <div className="grid grid-cols-3 md:grid-cols-4 xl:grid-cols-7 gap-4 px-1">
                 <div className="flex flex-col items-center justify-center">
