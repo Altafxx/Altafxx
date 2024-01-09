@@ -25,6 +25,7 @@ export default function RootLayout({
         <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png" />
         <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png" />
         <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png" />
+        <link rel="icon" type="image/png" href="/images/favicon.ico" />
       </Head>
       <body className={`${font.className} min-h-screen flex flex-col text-justify`}>
         {/* <main className='py-12 px-8 md:px-12 xl:px-24 flex-1 overflow-y-auto relative'> */}
