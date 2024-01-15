@@ -13,7 +13,7 @@ interface EducationProps {
 };
 
 export default function Education({ education }: EducationProps) {
-    return <div className="group text-left rounded-lg hover:bg-slate-700/30 hover:ring-2 ring-white/10 p-3 transition-all">
+    return <div className="group text-left rounded-lg hover:bg-slate-700/30 hover:ring-2 ring-slate-500/30 p-3 transition-all">
         <Badge className="bg-gradient-to-r group-hover:to-purple-500/50 group-hover:from-teal-300/50 shadow-black shadow-lg group-hover:scale-105 transition-all">Education History</Badge>
         {education.map((item, index) => (
             <div key={index} className="mb-4">
@@ -21,7 +21,7 @@ export default function Education({ education }: EducationProps) {
                     {item.qualification} {item.course}
                 </h3>
                 <h4>{item.location} ({item.start.month} {item.start.year} to {item.end.month} {item.end.year})</h4>
-                <ul>
+                <ul className="pl-5">
                     {item.achievement.map((item, i) => (
                         <li key={i}>• {item.position}, {item.association}</li>
                     ))}
