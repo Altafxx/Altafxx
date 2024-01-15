@@ -1,10 +1,10 @@
 import type { Metadata } from 'next'
 import Head from 'next/head'
-import { Josefin_Sans } from 'next/font/google'
+import { Inter } from 'next/font/google'
 import './globals.css'
 
-const font = Josefin_Sans({
-  weight: ['400', '700'],
+const font = Inter({
+  weight: ['400', '500', '700', '900'],
   subsets: ['latin'],
 })
 
