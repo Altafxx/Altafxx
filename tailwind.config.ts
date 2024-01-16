@@ -9,6 +9,13 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      colors: {
+        'buttery-vanilla': '#f9f5ec',
+        'raspberry-ganache': '#ff91e0',
+        'lavender-macaron': '#af6ee5',
+        'golden-honeycomb': '#fadc5d',
+        'dark-truffle': '#232220'
+      },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
         'gradient-conic':
