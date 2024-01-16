@@ -11,6 +11,20 @@ const font = Inter({
 export const metadata: Metadata = {
   title: 'Daniel Altaf',
   description: 'Just a simple software engineer portfolio',
+  openGraph: {
+    images: "https://danielaltaf.dev/api/og",
+    title: "Daniel Altaf",
+    description: "Just a simple software engineer portfolio",
+    url: "https://danielaltaf.dev",
+    type: "website"
+  },
+  twitter: {
+    images: "https://danielaltaf.dev/api/og",
+    card: "summary_large_image",
+    title: "Daniel Altaf",
+    description: "Just a simple software engineer portfolio"
+  },
+  keywords: "nextjs, laravel, software engineer, malaysia"
 }
 
 export default function RootLayout({
@@ -21,6 +35,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <Head>
+        <title>Hello world</title>
         <link rel="shortcut icon" href="/images/favicon.ico" />
         <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png" />
         <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png" />
