@@ -13,22 +13,22 @@ interface BannerProps {
 
 export default function Banner({ name, position, social }: BannerProps) {
     const logo = [
-        "/images/logo/linkedin.svg",
-        "/images/logo/github-circle.svg",
-        "/images/logo/website.svg",
-        "/images/logo/mail.svg"
+        "/images/logo/light/linkedin.svg",
+        "/images/logo/light/github-circle.svg",
+        "/images/logo/light/website.svg",
+        "/images/logo/light/mail.svg"
     ]
 
     return (
         <div className="text-center md:text-start grid grid-cols-1 md:grid-cols-2">
             <div className="flex flex-col items-center md:items-start">
                 {/* TODO: On hover text gradient animate */}
-                <h1 className="bg-gradient-to-r from-purple-500 to-teal-300 bg-clip-text hover:text-transparent transition-all w-fit">
+                <h1 className="text-lavender-macaron bg-gradient-to-r from-lavender-macaron to-raspberry-ganache bg-clip-text hover:text-transparent transition-all w-fit ease-in-out duration-300">
                     <Link href={"/"}>
                         {name}
                     </Link>
                 </h1>
-                <h2 className="text-white/80 text-md hover:-skew-x-12 w-fit">
+                <h2 className="text-black/70 text-md hover:-skew-x-12 w-fit ease-in-out duration-300">
                     <Link href={"https://en.wikipedia.org/wiki/Software_engineering"}>
                         {position}
                     </Link>
@@ -46,7 +46,7 @@ export default function Banner({ name, position, social }: BannerProps) {
                                 height={48}
                                 width={48}
                                 alt={item.name}
-                                className={"scale-90 hover:scale-100"}
+                                className={"scale-90 hover:scale-100 ease-in-out duration-300"}
                             />
                         </Link>
                     ))}

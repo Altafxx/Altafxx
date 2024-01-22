@@ -15,8 +15,8 @@ interface SkillsProps {
 
 export default function Skills({ skill }: SkillsProps) {
     return (
-        <div className="group text-left rounded-lg hover:bg-slate-700/30 hover:ring-2 ring-slate-500/30 p-3 transition-all">
-            <Badge className="bg-gradient-to-r group-hover:to-purple-500/50 group-hover:from-teal-300/50 shadow-black shadow-lg group-hover:scale-105 transition-all">Relevant Skills</Badge>
+        <div className="group text-left rounded-lg hover:bg-lavender-macaron/30 hover:ring-2 ring-lavender-macaron/30 p-3 transition-all ease-in-out duration-300">
+            <Badge className="bg-white bg-gradient-to-r from-lavender-macaron to-raspberry-ganache bg-clip-text group-hover:bg-clip-border px-2 text-transparent shadow-md shadow-lavender-macaron transition-all group-hover:scale-105 group-hover:from-lavender-macaron group-hover:to-raspberry-ganache group-hover:text-white ease-in-out duration-300">Relevant Skills</Badge>
             <h3>Language:</h3>
             <ul className="mb-4 pl-5">
                 {skill.language.map((item, index) => (
