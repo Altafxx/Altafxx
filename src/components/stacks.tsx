@@ -6,7 +6,7 @@ export default function Stacks() {
     const imageClass = "hover:scale-110 duration-150 opacity-80 hover:opacity-100 hover:rotate-12 transition-all ease-in-out duration-300"
 
     return (
-        <div className="group/container text-center my-3 pt-3 pb-6 bg-lavender-macaron/15 hover:bg-lavender-macaron/30 rounded-lg ring-2 ring-lavender-macaron/50 hover:ring-lavender-macaron shadow-md transition-all ease-in-out duration-300">
+        <div className="group/container text-center my-3 pt-3 pb-6 bg-lavender-macaron/15 hover:bg-lavender-macaron/30 rounded-lg ring-2 ring-lavender-macaron/50 hover:ring-lavender-macaron transition-all ease-in-out duration-300">
             <div className="flex justify-center ">
                 <Badge className="rounded-full px-4 bg-white/0 group-hover/container:bg-white transition-all ease-in-out duration-300">
                     <h1 className="my-2 bg-gradient-to-r from-lavender-macaron via-raspberry-ganache to-golden-honeycomb hover:to-lavender-macaron hover:via-raspberry-ganache hover:from-golden-honeycomb bg-clip-text group-hover/container:text-transparent transition-all ease-in-out duration-300">Primary Toolbelt</h1>
