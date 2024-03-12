@@ -11,7 +11,7 @@ export default function Stacks() {
                 <Badge className="rounded-full px-4 bg-white/0 group-hover/container:bg-white transition-all ease-in-out duration-300">
                     <h1 className="my-2 bg-gradient-to-r from-lavender-macaron via-raspberry-ganache to-golden-honeycomb hover:to-lavender-macaron hover:via-raspberry-ganache hover:from-golden-honeycomb bg-clip-text group-hover/container:text-transparent transition-all ease-in-out duration-300">Primary Toolbelt</h1>
                 </Badge></div>
-            <div className="grid grid-cols-3 md:grid-cols-4 xl:grid-cols-7 gap-4 px-1">
+            <div className="grid grid-cols-3 md:grid-cols-4 xl:grid-cols-8 gap-4 px-1">
                 <div className="flex flex-col items-center justify-center">
                     <Link href={"https://git-scm.com/"} >
                         <div className="relative inline-flex group">
@@ -174,7 +174,7 @@ export default function Stacks() {
                     </Link>
                     <span className="text-lg mt-2">Prisma</span>
                 </div>
-                <div className="flex flex-col items-center justify-center col-span-3 md:col-span-1">
+                <div className="flex flex-col items-center justify-center col-span-1 md:col-span-1">
                     <Link href={"https://www.postgresql.org/"}>
                         <div className="relative inline-flex group">
                             <div
@@ -186,6 +186,33 @@ export default function Stacks() {
                                 height={64}
                                 width={64}
                                 alt="PostgreSQL"
+                                // className={`${imageClass} inline group-hover/container:hidden`}
+                                className={imageClass}
+                            />
+                            {/* <Image
+                                priority
+                                src="/images/logo/dark/postgresql.svg"
+                                height={64}
+                                width={64}
+                                alt="PostgreSQL"
+                                className={`${imageClass} hidden group-hover/container:inline`}
+                            /> */}
+                        </div>
+                    </Link>
+                    <span className="text-lg mt-2">Next JS</span>
+                </div>
+                <div className="flex flex-col items-center justify-center col-span-1 md:col-span-1">
+                    <Link href={"https://nextjs.org/"}>
+                        <div className="relative inline-flex group">
+                            <div
+                                className="absolute transitiona-all ease-in-out duration-300 opacity-0 -inset-px bg-gradient-to-r from-raspberry-ganache via-lavender-macaron to-golden-honeycomb rounded-xl blur-lg group-hover:opacity-70 group-hover:-inset-1 group-hover:duration-200 animate-tilt">
+                            </div>
+                            <Image
+                                priority
+                                src="/images/logo/light/nextjs.svg"
+                                height={64}
+                                width={64}
+                                alt="Next JS"
                                 // className={`${imageClass} inline group-hover/container:hidden`}
                                 className={imageClass}
                             />
