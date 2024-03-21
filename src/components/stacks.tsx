@@ -182,7 +182,7 @@ export default function Stacks() {
                             </div>
                             <Image
                                 priority
-                                src="/images/logo/light/postgresql.svg"
+                                src="/images/logo/light/nextjs.svg"
                                 height={64}
                                 width={64}
                                 alt="PostgreSQL"
@@ -209,7 +209,7 @@ export default function Stacks() {
                             </div>
                             <Image
                                 priority
-                                src="/images/logo/light/nextjs.svg"
+                                src="/images/logo/light/postgresql.svg"
                                 height={64}
                                 width={64}
                                 alt="Next JS"
