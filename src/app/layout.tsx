@@ -51,9 +51,7 @@ export default function RootLayout({
           font.variable
         )}>
         {/* <main className='py-12 px-8 md:px-12 xl:px-24 flex-1 overflow-y-auto relative'> */}
-        <main className='py-12 px-8 md:px-12 xl:px-24 flex-1 overflow-y-auto'>
-          {children}
-        </main>
+        {children}
       </body>
     </html>
   )

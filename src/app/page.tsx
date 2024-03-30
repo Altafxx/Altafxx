@@ -1,22 +1,27 @@
 import profile from "@/data/profile.json"
 import { Banner, Skills, Experience, Education, Volunteer, Stacks } from "@/components";
-
+import { Badge } from "@/components/ui/badge";
+import { Card } from "@/components/ui/card";
 
 export default function Home() {
   return (
-    <div>
-      <Banner name={profile.name.first} position={profile.position} social={profile.social} />
-      <Stacks />
+    <main className='py-12 px-8 md:px-12 xl:px-24 flex-1 overflow-y-auto'>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-        <div className="md:order-1 2xl:mr-60 xl:mr-32 lg:mr-16">
-          <Experience experience={profile.experience} />
-          <Education education={profile.education} />
-          <Volunteer open_source={profile.open_source} />
+        <div>
+          <Card className="p-4">
+            <Badge>Work Experience</Badge>
+            <div className="grid grid-cols-2">
+            </div>
+          </Card>
         </div>
-        <div className="md:order-2">
-          <Skills skill={profile.skill} />
+        <div>
+          <Card className="p-4">
+            <Badge>Work Experience</Badge>
+            <div className="grid grid-cols-2">
+            </div>
+          </Card>
         </div>
       </div>
-    </div>
+    </main>
   )
 }

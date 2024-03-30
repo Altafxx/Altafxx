@@ -4,7 +4,7 @@ import { Banner, Skills, Experience, Education, Volunteer, Stacks } from "@/comp
 
 export default function Home() {
     return (
-        <div>
+        <main className='py-12 px-8 md:px-12 xl:px-24 flex-1 overflow-y-auto'>
             <Banner name={profile.name.first} position={profile.position} social={profile.social} />
             <Stacks />
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -17,6 +17,6 @@ export default function Home() {
                     <Skills skill={profile.skill} />
                 </div>
             </div>
-        </div>
+        </main>
     )
 }

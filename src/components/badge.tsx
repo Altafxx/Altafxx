@@ -7,7 +7,7 @@ export default function Badge({
 }) {
     return (
         <div className={`rounded-xl bg-white text-black px-2 w-fit my-4 ${className}`}>
-            <p className={`font-bold text-lg`}>{children}</p>
+            <text className={`font-bold text-lg`}>{children}</text>
         </div>
     );
 }
