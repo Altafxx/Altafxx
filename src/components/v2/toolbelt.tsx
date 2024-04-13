@@ -1,5 +1,4 @@
 "use client"
-import * as React from "react"
 import Image from "next/image"
 // import { NodeJS } from 'node';
 
@@ -49,32 +48,32 @@ const stackDef = [
     "Next.js is a React framework that enables server-side rendering and static site generation for React applications. It allows you to build web applications with speed and efficiency, providing a great developer experience.",
     "PostgreSQL is a powerful, open-source object-relational database system. It's known for its reliability, robustness, and performance, making it a popular choice for many applications.",
 ]
-
-const useResponsiveWidth = () => {
-    if (typeof window !== 'undefined') {
-        const [screenWidth, setScreenWidth] = useState(window.innerWidth);
-
-        useEffect(() => {
-            const handleResize = () => setScreenWidth(window.innerWidth);
-            window.addEventListener('resize', handleResize);
-
-            return () => window.removeEventListener('resize', handleResize);
-        }, []);
-
-        const responsiveWidth = screenWidth <= 768 ? 42 : screenWidth <= 1024 ? 58 : 88; // Adjust breakpoint as needed
-
-        return responsiveWidth;
-    }
-    return 88;
-};
 export function Toolbelt() {
-    const [current, setCurrent] = React.useState(0)
-    React.useEffect(() => {
+    const [current, setCurrent] = useState(0)
+    useEffect(() => {
         const interval = setInterval(() => {
             setCurrent(current => (current + 1) % stacks.length);
         }, 2000);
         return () => clearInterval(interval);
     }, []);
+
+    const useResponsiveWidth = () => {
+        if (typeof window !== 'undefined') {
+            const [screenWidth, setScreenWidth] = useState(window.innerWidth);
+
+            useEffect(() => {
+                const handleResize = () => setScreenWidth(window.innerWidth);
+                window.addEventListener('resize', handleResize);
+
+                return () => window.removeEventListener('resize', handleResize);
+            }, []);
+
+            const responsiveWidth = screenWidth <= 768 ? 42 : screenWidth <= 1024 ? 58 : 88; // Adjust breakpoint as needed
+
+            return responsiveWidth;
+        }
+        return 88;
+    };
 
 
     function clickFunc(index: number) {
