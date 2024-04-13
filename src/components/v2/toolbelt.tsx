@@ -51,18 +51,21 @@ const stackDef = [
 ]
 
 const useResponsiveWidth = () => {
-    const [screenWidth, setScreenWidth] = useState(window.innerWidth);
+    if (typeof window !== 'undefined') {
+        const [screenWidth, setScreenWidth] = useState(window.innerWidth);
 
-    useEffect(() => {
-        const handleResize = () => setScreenWidth(window.innerWidth);
-        window.addEventListener('resize', handleResize);
+        useEffect(() => {
+            const handleResize = () => setScreenWidth(window.innerWidth);
+            window.addEventListener('resize', handleResize);
 
-        return () => window.removeEventListener('resize', handleResize);
-    }, []);
+            return () => window.removeEventListener('resize', handleResize);
+        }, []);
 
-    const responsiveWidth = screenWidth <= 768 ? 42 : screenWidth <= 1024 ? 58 : 88; // Adjust breakpoint as needed
+        const responsiveWidth = screenWidth <= 768 ? 42 : screenWidth <= 1024 ? 58 : 88; // Adjust breakpoint as needed
 
-    return responsiveWidth;
+        return responsiveWidth;
+    }
+    return 88;
 };
 export function Toolbelt() {
     const [current, setCurrent] = React.useState(0)
