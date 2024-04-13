@@ -50,7 +50,7 @@ const stackDef = [
     "PostgreSQL is a powerful, open-source object-relational database system. It's known for its reliability, robustness, and performance, making it a popular choice for many applications.",
 ]
 const useResponsiveWidth = () => {
-    const [screenWidth, setScreenWidth] = useState(window?.innerWidth ?? 1080);
+    const [screenWidth, setScreenWidth] = useState(typeof window !== 'undefined' ? window.innerWidth : 1080);
 
     useEffect(() => {
         const handleResize = () => setScreenWidth(window.innerWidth);
