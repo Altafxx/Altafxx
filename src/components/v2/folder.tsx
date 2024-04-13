@@ -9,7 +9,7 @@ const folderClose = <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" widt
     <path fill="#FFA000" d="M40,12H22l-4-4H8c-2.2,0-4,1.8-4,4v8h40v-4C44,13.8,42.2,12,40,12z"></path><path fill="#FFCA28" d="M40,12H8c-2.2,0-4,1.8-4,4v20c0,2.2,1.8,4,4,4h32c2.2,0,4-1.8,4-4V16C44,13.8,42.2,12,40,12z"></path></svg>
 
 
-export default function folder({ name, redirect, action, state }: { name?: string, redirect?: string, action?: Function, state?: boolean } = {}) {
+export default function Folder({ name, redirect, action, state }: { name?: string, redirect?: string, action?: Function, state?: boolean } = {}) {
     const [a, seta] = useState(state ?? false);
 
     function clickFunc() {

@@ -1,6 +1,6 @@
 "use client"
 import profile from "@/data/profile.json"
-import folder from "@/components/v2/folder";
+import Folder from "@/components/v2/folder";
 import { Toolbelt } from "@/components/v2/toolbelt";
 import Image from "next/image";
 import { useEffect, useState } from "react";
@@ -41,16 +41,16 @@ export default function Home() {
       <div className="min-h-screen bg-gradient-to-br from-pink-400 via-purple-400 to-cyan-400">
         <div className="mx-6 p-1 flex justify-between">
           <div>
-            {folder({ name: "Personal Information", action: togglePersonalInfo, state: personalInfo })}
+            {Folder({ name: "Personal Information", action: togglePersonalInfo, state: personalInfo })}
           </div>
           <div className="grid grid-flow-col">
             <div>
-              {folder({ name: "Experience" })}
+              {Folder({ name: "Experience" })}
             </div>
             <div>
-              {folder({ name: "Projects and Interest" })}
-              {folder()}
-              {folder()}
+              {Folder({ name: "Projects and Interest" })}
+              {Folder()}
+              {Folder()}
             </div>
           </div>
         </div>
