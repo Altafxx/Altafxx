@@ -90,12 +90,12 @@ export function Toolbelt() {
     return (
         <Card>
             <CardContent className="p-6">
-                <div className="flex flex-col xl:flex-row gap-4">
-                    <div className="flex-2">
-                        <div className="grid grid-cols-2 max-xl:grid-cols-4 max-lg:grid-cols-4 gap-4">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div className="grid lg:grid-cols-2">
+                        <div className="grid grid-cols-4 lg:grid-cols-2 gap-4">
                             {Array.from(stacks).map((_, index) => {
                                 return (
-                                    <div key={index} className={`m-2 p-2 rounded-sm bg-gradient-to-tl from-pink-400/40 via-purple-400/40 to-cyan-400/40 w-fit self-center select-none cursor-pointer hover:from-pink-400/60 group hover:shadow-md ring ${index == current ? "ring-2 ring-pink-400" : "ring-0"} transition-all duration-300 ease-in-out`} onClick={() => clickFunc(index)}>
+                                    <div key={index} className={`m-2 p-1.5 md:p-2  rounded-sm bg-gradient-to-tl from-pink-400/40 via-purple-400/40 to-cyan-400/40 w-fit self-center select-none cursor-pointer hover:from-pink-400/60 group hover:shadow-md ring ${index == current ? "ring-2 ring-pink-400" : "ring-0"} transition-all duration-300 ease-in-out`} onClick={() => clickFunc(index)}>
                                         <Image
                                             priority
                                             src={stacks[index]}
@@ -108,9 +108,7 @@ export function Toolbelt() {
                                 )
                             })}
                         </div>
-                    </div>
-                    <div className="self-center text-center">
-                        <Card className="px-14 py-16 max-md:px-24 max-md:py-10 max-xl:px-24 max-xl:py-10 select-none shadow-md">
+                        <Card className="flex flex-col items-center justify-center py-2 text-center  select-none shadow-md">
                             <Image
                                 key={current}
                                 priority
@@ -120,21 +118,22 @@ export function Toolbelt() {
                                 alt="Logo"
                                 className="transition-all duration-300 ease-in-out"
                             />
-                            <div className="mt-2 font-medium">{stackNames[current]}</div>
+                            <div className="mt-2 font-medium text-center">{stackNames[current]}</div>
                         </Card>
+
                     </div>
-                    <div className="lg:flex-1 h-full flex flex-col justify-between">
+                    <div className="lg:flex-1 h-full justify-between">
                         <div className="grid grid-flow-row my-2 xl:my-4">
                             <div>
                                 <div className="text-lg font-semibold">{stackNames[current]}</div>
-                                <div>
+                                <div className="text-xs md:text-sm ">
                                     {stackDef[current]}
                                 </div>
                             </div>
                         </div>
-                        <div className="flex flex-col justify-end">  <div className="">
-                            <span>Product Site:</span>
-                            <a href={stackLinks[current]} className="ml-2 text-blue-500">{stackLinks[current]}</a>
+                        <div className="text-xs md:text-sm">  <div className="">
+                            <div>Product Site:</div>
+                            <a href={stackLinks[current]} className="text-blue-500">{stackLinks[current]}</a>
                         </div>
                         </div>
                     </div>

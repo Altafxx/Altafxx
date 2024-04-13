@@ -37,76 +37,79 @@ export default function Home() {
   const togglePersonalInfo = () => setPersonalInfo(!personalInfo)
 
   return (
-    <main className="min-h-screen bg-gradient-to-br from-pink-400 via-purple-400 to-cyan-400">
-      <div className="m-6 p-1 flex justify-between">
-        <div>
-          {folder({ name: "Personal Information", action: togglePersonalInfo, state: personalInfo })}
-        </div>
-        <div className="grid grid-flow-col">
+    <main>
+      <div className="min-h-screen bg-gradient-to-br from-pink-400 via-purple-400 to-cyan-400">
+        <div className="mx-6 p-1 flex justify-between">
           <div>
-            {folder({ name: "Experience" })}
+            {folder({ name: "Personal Information", action: togglePersonalInfo, state: personalInfo })}
           </div>
-          <div>
-            {folder({ name: "Projects and Interest" })}
-            {folder()}
-            {folder()}
-          </div>
-        </div>
-      </div>
-      {
-        personalInfo ?
-
-          <div className="bg-slate-300 absolute left-10 right-10 sm:left-24 sm:right-24 md:left-30 md:right-30 lg:left-44 lg:right-44 xl:left-52 xl:right-52 2xl:left-72 2xl:right-72 top-32 bottom-40 max-lg:bottom-15 max-xl:bottom-20 rounded-sm shadow-lg">
-            <div className="mt-3">
-              <div className="absolute right-0 left-0 text-center text-black/50 font-medium max-sm:hidden">Personal Information</div>
-              <div className="grid grid-flow-col gap-2 absolute right-0 mr-3">
-                <div className="bg-green-500 w-4 h-4 rounded-full cursor-pointer" />
-                <div className="bg-yellow-500 w-4 h-4 rounded-full cursor-pointer" />
-                <div className="bg-red-500 w-4 h-4 rounded-full cursor-pointer" onClick={() => { togglePersonalInfo() }} />
-              </div>
+          <div className="grid grid-flow-col">
+            <div>
+              {folder({ name: "Experience" })}
             </div>
             <div>
-              <div className="bg-slate-800 m-3 absolute bottom-0 top-8 left-0 right-0 rounded-sm p-4 text-white/80">
-                <div className="grid grid-cols-4 max-lg:grid-cols-1 justify-items-center max-md:mt-2 max-xl:mt-6 mt-8 gap-4">
-                  <div className=" grid grid-cols-3 lg:grid-cols-1">
-                    <Image
-                      src={"/images/MCSkin.png"}
-                      height={600}
-                      width={responsiveWidth}
-                      alt={"Avatar model"}
-                      className={`transition-all duration-300 flex `}
-                    />
-                    <div className="m-2 col-span-2 lg:hidden">
-                      <div className="text-xl font-semibold text-white/80">{profile.position}</div>
-                      <div className="text-xl max-md:hidden">{profile.name.first} • {profile.location.city}, {profile.location.country}</div>
-                      <div className="md:hidden">
-                        <div className="text-xl">{profile.name.first}</div>
-                        <div className="text-xl">{profile.location.city}, {profile.location.country}</div>
-                      </div>
-                    </div>
+              {folder({ name: "Projects and Interest" })}
+              {folder()}
+              {folder()}
+            </div>
+          </div>
+        </div>
+        {
+          personalInfo ?
 
-                  </div>
-                  {/* <img src="/images/MCSkin.png" className="scale-50"></img> */}
-                  <div className="col-span-3">
-                    <div>
-                      <div className="m-2 max-lg:hidden">
-                        <div className="text-xl font-semibold text-white/80">{profile.position}</div>
-                        <div className="text-xl ">{profile.name.first} • {profile.location.city}, {profile.location.country}</div>
+            <div className="bg-slate-300 absolute left-10 right-10 sm:left-24 sm:right-24 md:left-30 md:right-30 lg:left-44 lg:right-44 xl:left-52 xl:right-52 2xl:left-72 2xl:right-72 top-32 bottom-40 max-lg:bottom-15 max-xl:bottom-20 rounded-sm shadow-lg">
+              <div className="mt-3">
+                <div className="absolute right-0 left-0 text-center text-black/50 font-medium max-sm:hidden">Personal Information</div>
+                <div className="grid grid-flow-col gap-2 absolute right-0 mr-3">
+                  <div className="bg-green-500 w-4 h-4 rounded-full cursor-pointer" />
+                  <div className="bg-yellow-500 w-4 h-4 rounded-full cursor-pointer" />
+                  <div className="bg-red-500 w-4 h-4 rounded-full cursor-pointer" onClick={() => { togglePersonalInfo() }} />
+                </div>
+              </div>
+              <div>
+                <div className="bg-slate-800 m-3 absolute bottom-0 top-8 left-0 right-0 rounded-sm p-4 text-white/80">
+                  <div className="grid grid-cols-4 max-lg:grid-cols-1 justify-items-center max-md:mt-2 max-xl:mt-6 mt-8 gap-4">
+                    <div className=" grid grid-cols-3 lg:grid-cols-1">
+                      <Image
+                        src={"/images/MCSkin.png"}
+                        height={600}
+                        width={responsiveWidth}
+                        alt={"Avatar model"}
+                        className={`transition-all duration-700 flex `}
+                      />
+                      <div className="m-2 col-span-2 lg:hidden">
+                        <div className="text-sm lg:text-xl font-semibold text-white/80">{profile.position}</div>
+                        <div className="text-xl max-md:hidden">{profile.name.first} • {profile.location.city}, {profile.location.country}</div>
+                        <div className="md:hidden">
+                          <div className="text-xl">{profile.name.first}</div>
+                          <div className="text-sm">{profile.location.city}, {profile.location.country}</div>
+                        </div>
                       </div>
-                      <Toolbelt />
+
+                    </div>
+                    {/* <img src="/images/MCSkin.png" className="scale-50"></img> */}
+                    <div className="col-span-3">
+                      <div>
+                        <div className="m-2 max-lg:hidden">
+                          <div className="text-xl font-semibold text-white/80">{profile.position}</div>
+                          <div className="text-xl ">{profile.name.first} • {profile.location.city}, {profile.location.country}</div>
+                        </div>
+                        <Toolbelt />
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
+            : null
+        }
+        <div className=" bg-gradient-to-l from-pink-400 via-purple-400 to-cyan-400 outline outline-white/10  w-full h-14 fixed bottom-0 flex justify-center items-center">
+          <div className="rounded-full bg-white/30 hover:bg-white/50 w-fit p-2 cursor-pointer hover:ring-2 ring-1 ring-black/20 transition-all ease-in-out duration-300">
+            {doorLogo}
           </div>
-          : null
-      }
-      <div className=" bg-gradient-to-l from-pink-400/40 via-purple-400/40 to-cyan-400/40 outline outline-white/10  w-full h-14 fixed bottom-0 flex justify-center items-center">
-        <div className="rounded-full bg-white/30 hover:bg-white/50 w-fit p-2 cursor-pointer hover:ring-2 ring-1 ring-black/20 transition-all ease-in-out duration-300">
-          {doorLogo}
         </div>
       </div>
+
     </main>
   );
 }
