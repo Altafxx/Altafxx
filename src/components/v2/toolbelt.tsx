@@ -50,6 +50,7 @@ const stackDef = [
 ]
 export function Toolbelt() {
     const [current, setCurrent] = useState(0)
+    const [screenWidth, setScreenWidth] = useState(1080);
     useEffect(() => {
         const interval = setInterval(() => {
             setCurrent(current => (current + 1) % stacks.length);
@@ -59,8 +60,7 @@ export function Toolbelt() {
 
     const useResponsiveWidth = () => {
         if (typeof window !== 'undefined') {
-            const [screenWidth, setScreenWidth] = useState(window.innerWidth);
-
+            setScreenWidth(window.innerWidth);
             useEffect(() => {
                 const handleResize = () => setScreenWidth(window.innerWidth);
                 window.addEventListener('resize', handleResize);
