@@ -118,7 +118,7 @@ export function Toolbelt() {
                                 )
                             })}
                         </div>
-                        <Card className="flex flex-col items-center justify-center py-2 text-center  select-none shadow-md">
+                        <Card className="flex flex-col items-center justify-center py-2 text-center  select-none shadow-md max-sm:hidden">
                             <Image
                                 key={current}
                                 priority
