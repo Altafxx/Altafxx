@@ -8,7 +8,7 @@ const folderOpen = (size: number = 100) => <svg xmlns="http://www.w3.org/2000/sv
 const folderClose = (size: number = 100) => <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width={size} height={size} viewBox="0 0 48 48">
     <path fill="#FFA000" d="M40,12H22l-4-4H8c-2.2,0-4,1.8-4,4v8h40v-4C44,13.8,42.2,12,40,12z"></path><path fill="#FFCA28" d="M40,12H8c-2.2,0-4,1.8-4,4v20c0,2.2,1.8,4,4,4h32c2.2,0,4-1.8,4-4V16C44,13.8,42.2,12,40,12z"></path></svg>
 
-const useResponsiveWidth = () => {
+const useResponsiveSize = () => {
     const [screenWidth, setScreenWidth] = useState(typeof window !== 'undefined' ? window.innerWidth : 1080);
 
     useEffect(() => {
@@ -23,8 +23,8 @@ const useResponsiveWidth = () => {
     return responsiveWidth;
 };
 
-
 export default function Folder({ name, redirect, action, state }: { name?: string, redirect?: string, action?: Function, state?: boolean } = {}) {
+    const responsiveSize = useResponsiveSize();
     const [a, seta] = useState(state ?? false);
 
     function clickFunc() {
@@ -33,10 +33,10 @@ export default function Folder({ name, redirect, action, state }: { name?: strin
         if (name) mouseClick.play()
         if (action) action()
     }
-    return (a && name)
-        ? <a href={redirect} className="cursor-pointer select-none text-center" onClick={() => clickFunc()}>
-            {folderOpen(useResponsiveWidth())}
-            <div className="truncate max-w-[100px] text-sm">{name}</div>
-        </a>
-        : <a href={redirect} className="cursor-pointer select-none text-center" onClick={() => clickFunc()}>{folderClose(useResponsiveWidth())}<div className="truncate max-w-[100px] text-sm">{name}</div></a>
+    return <a href={redirect}
+        className="cursor-pointer select-none text-center"
+        onClick={() => clickFunc()}>
+        {a ? folderOpen(responsiveSize) : folderClose(responsiveSize)}
+        <div className={`truncate max-w-[${useResponsiveSize()}px] text-sm`}>{name}</div>
+    </a>
 }
