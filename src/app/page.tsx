@@ -49,7 +49,7 @@ export default function Home() {
   return (
     <main>
       <div className="min-h-screen bg-gradient-to-br from-pink-400 via-purple-400 to-cyan-400">
-        <div className="mx-6 p-6 flex justify-between">
+        <div className="mx-6 p-1 flex justify-between">
           <div>
             {Folder({ name: "Personal Information", action: togglePersonalInfo, state: personalInfo })}
           </div>
