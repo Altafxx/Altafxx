@@ -50,31 +50,31 @@ const stackDef = [
     "PostgreSQL is a powerful, open-source object-relational database system. It's known for its reliability, robustness, and performance, making it a popular choice for many applications.",
 ]
 
-const calculateResponsiveWidth = (width: number) => {
-    return width <= 768 ? 42 : width <= 1024 ? 50 : width <= 1280 ? 60 : 88;
-};
+// const calculateResponsiveWidth = (width: number) => {
+//     return width <= 768 ? 42 : width <= 1024 ? 50 : width <= 1280 ? 60 : 88;
+// };
 
-const useResponsiveWidth = () => {
-    const [screenWidth, setScreenWidth] = useState(0);
-    const [responsiveWidth, setResponsiveWidth] = useState(calculateResponsiveWidth(screenWidth));
+// const useResponsiveWidth = () => {
+//     const [screenWidth, setScreenWidth] = useState(0);
+//     const [responsiveWidth, setResponsiveWidth] = useState(calculateResponsiveWidth(screenWidth));
 
-    useEffect(() => {
-        const handleResize = () => {
-            setScreenWidth(window.innerWidth);
-            setResponsiveWidth(calculateResponsiveWidth(window.innerWidth));
-        }
-        window.addEventListener('resize', handleResize);
+//     useEffect(() => {
+//         const handleResize = () => {
+//             setScreenWidth(window.innerWidth);
+//             setResponsiveWidth(calculateResponsiveWidth(window.innerWidth));
+//         }
+//         window.addEventListener('resize', handleResize);
 
-        return () => window.removeEventListener('resize', handleResize);
-    }, []);
+//         return () => window.removeEventListener('resize', handleResize);
+//     }, []);
 
-    // const responsiveWidth = screenWidth <= 768 ? 42 : screenWidth <= 1024 ? 58 : 88; // Adjust breakpoint as needed
+//     // const responsiveWidth = screenWidth <= 768 ? 42 : screenWidth <= 1024 ? 58 : 88; // Adjust breakpoint as needed
 
-    return responsiveWidth;
-};
+//     return responsiveWidth;
+// };
 
 export function Toolbelt() {
-    const responsiveWidth = useResponsiveWidth();
+    // const responsiveWidth = useResponsiveWidth();
     const [current, setCurrent] = useState(0)
     React.useEffect(() => {
         const interval = setInterval(() => {
@@ -147,15 +147,15 @@ export function Toolbelt() {
                                 key={current}
                                 priority
                                 src={stacks[current]}
-                                height={42}
-                                width={42}
+                                height={40}
+                                width={40}
                                 alt="Logo"
                                 className="transition-all duration-300 ease-in-out"
                             />
-                            <div className="mt-2 font-medium text-center">{stackNames[current]}</div>
+                            <div className="mt-2 font-medium text-center max-sm:text-xs">{stackNames[current]}</div>
                         </Card>
                     </div>
-                    <div className="lg:flex-1 h-full justify-between max-sm:hidden">
+                    <div className="lg:flex-1 h-full justify-between">
                         <div className="grid grid-flow-row my-1 xl:my-4">
                             <div>
                                 <div className="text-lg font-semibold">{stackNames[current]}</div>
@@ -164,10 +164,11 @@ export function Toolbelt() {
                                 </div>
                             </div>
                         </div>
-                        <div className="text-xs md:text-sm">  <div className="">
-                            <div>Product Site:</div>
-                            <a href={stackLinks[current]} className="text-blue-500">{stackLinks[current]}</a>
-                        </div>
+                        <div className="text-xs md:text-sm">
+                            <div className=" max-sm:hidden">
+                                <div>Product Site:</div>
+                                <a href={stackLinks[current]} className="text-blue-500">{stackLinks[current]}</a>
+                            </div>
                         </div>
                     </div>
                 </div>
