@@ -55,7 +55,7 @@ const calculateResponsiveWidth = (width: number) => {
 };
 
 const useResponsiveWidth = () => {
-    const [screenWidth, setScreenWidth] = useState(window.innerWidth);
+    const [screenWidth, setScreenWidth] = useState(0);
     const [responsiveWidth, setResponsiveWidth] = useState(calculateResponsiveWidth(screenWidth));
 
     useEffect(() => {
@@ -75,7 +75,7 @@ const useResponsiveWidth = () => {
 
 export function Toolbelt() {
     const responsiveWidth = useResponsiveWidth();
-    const [current, setCurrent] = React.useState(0)
+    const [current, setCurrent] = useState(0)
     React.useEffect(() => {
         const interval = setInterval(() => {
             setCurrent(current => (current + 1) % stacks.length);

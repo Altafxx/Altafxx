@@ -14,7 +14,7 @@ const calculateResponsiveWidth = (width: number) => {
 };
 
 const useResponsiveSize = () => {
-    const [screenWidth, setScreenWidth] = useState(window.innerWidth);
+    const [screenWidth, setScreenWidth] = useState(0);
     const [responsiveWidth, setResponsiveWidth] = useState(calculateResponsiveWidth(screenWidth));
 
     useEffect(() => {
