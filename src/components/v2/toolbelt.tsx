@@ -101,11 +101,11 @@ export function Toolbelt() {
         <Card>
             <CardContent className="p-6 max-md:p-4">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-md:gap-2">
-                    <div className="grid lg:grid-cols-2">
-                        <div className="grid grid-cols-4 lg:grid-cols-2 gap-4">
+                    <div className="grid lg:grid-cols-2 gap-2">
+                        <div className="grid grid-cols-4 lg:grid-cols-2 gap-1 lg:gap-2 xl:gap-4">
                             {Array.from(stacks).map((_, index) => {
                                 return (
-                                    <div key={index} className={`m-2 p-1.5 md:p-2  rounded-sm bg-gradient-to-tl from-pink-400/40 via-purple-400/40 to-cyan-400/40 w-fit self-center select-none cursor-pointer hover:from-pink-400/60 group hover:shadow-md ring ${index == current ? "ring-2 ring-pink-400" : "ring-0"} transition-all duration-300 ease-in-out`} onClick={() => clickFunc(index)}>
+                                    <div key={index} className={`m-1 p-1.5 md:p-2  rounded-sm bg-gradient-to-tl from-pink-400/40 via-purple-400/40 to-cyan-400/40 w-fit self-center select-none cursor-pointer hover:from-pink-400/60 group hover:shadow-md ring ${index == current ? "ring-2 ring-pink-400" : "ring-0"} transition-all duration-300 ease-in-out`} onClick={() => clickFunc(index)}>
                                         <Image
                                             priority
                                             src={stacks[index]}
