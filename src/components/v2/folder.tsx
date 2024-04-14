@@ -45,7 +45,9 @@ export default function Folder({ name, redirect, action, state }: { name?: strin
     return <a href={redirect}
         className="cursor-pointer select-none text-center"
         onClick={() => clickFunc()}>
-        {a ? folderOpen(responsiveSize) : folderClose(responsiveSize)}
+        <div className="max-xl:hidden">{a ? folderOpen(100) : folderClose(100)}</div>
+        <div className="max-sm:hidden xl:hidden">{a ? folderOpen(85) : folderClose(85)}</div>
+        <div className="sm:hidden">{a ? folderOpen(60) : folderClose(60)}</div>
         <div className="truncate max-w-[60px] md:max-w-[85px] xl:max-w-[100px] text-xs md:text-sm">{name}</div>
     </a>
 }

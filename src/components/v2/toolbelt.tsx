@@ -118,13 +118,37 @@ export function Toolbelt() {
                                 )
                             })}
                         </div>
-                        <Card className="flex flex-col items-center justify-center py-2 text-center  select-none shadow-md">
+                        <Card className="flex flex-col items-center justify-center py-2 text-center select-none shadow-md max-xl:hidden">
                             <Image
                                 key={current}
                                 priority
                                 src={stacks[current]}
-                                height={responsiveWidth}
-                                width={responsiveWidth}
+                                height={88}
+                                width={88}
+                                alt="Logo"
+                                className="transition-all duration-300 ease-in-out"
+                            />
+                            <div className="mt-2 font-medium text-center">{stackNames[current]}</div>
+                        </Card>
+                        <Card className="flex flex-col items-center justify-center py-2 text-center  select-none shadow-md max-sm:hidden xl:hidden">
+                            <Image
+                                key={current}
+                                priority
+                                src={stacks[current]}
+                                height={50}
+                                width={50}
+                                alt="Logo"
+                                className="transition-all duration-300 ease-in-out"
+                            />
+                            <div className="mt-2 font-medium text-center">{stackNames[current]}</div>
+                        </Card>
+                        <Card className="flex flex-col items-center justify-center py-2 text-center  select-none shadow-md sm:hidden">
+                            <Image
+                                key={current}
+                                priority
+                                src={stacks[current]}
+                                height={42}
+                                width={42}
                                 alt="Logo"
                                 className="transition-all duration-300 ease-in-out"
                             />
