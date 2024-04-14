@@ -15,20 +15,30 @@ const minimize = <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" 
 
 const doorLogo = <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 576 512"><path d="M96 64c0-35.3 28.7-64 64-64H416c35.3 0 64 28.7 64 64V448h64c17.7 0 32 14.3 32 32s-14.3 32-32 32H432 144 32c-17.7 0-32-14.3-32-32s14.3-32 32-32H96V64zM384 288a32 32 0 1 0 0-64 32 32 0 1 0 0 64z" /></svg>
 
+const calculateResponsiveWidth = (width: number) => {
+  return width <= 768 ? 70 : width <= 1024 ? 125 : 200;
+};
+
 const useResponsiveWidth = () => {
-  const [screenWidth, setScreenWidth] = useState(typeof window !== 'undefined' ? window.innerWidth : 1080);
+  const [screenWidth, setScreenWidth] = useState(window.innerWidth);
+  const [responsiveWidth, setResponsiveWidth] = useState(calculateResponsiveWidth(screenWidth));
 
   useEffect(() => {
-    const handleResize = () => setScreenWidth(window?.innerWidth);
+    const handleResize = () => {
+      setScreenWidth(window.innerWidth);
+      setResponsiveWidth(calculateResponsiveWidth(window.innerWidth));
+    }
     window.addEventListener('resize', handleResize);
 
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
-  const responsiveWidth = screenWidth <= 768 ? 100 : screenWidth <= 1024 ? 125 : 200; // Adjust breakpoint as needed
+  // const responsiveWidth = screenWidth <= 768 ? 70 : screenWidth <= 1024 ? 125 : 200; // Adjust breakpoint as needed
 
   return responsiveWidth;
 };
+
+
 
 export default function Home() {
   const responsiveWidth = useResponsiveWidth();
@@ -72,11 +82,12 @@ export default function Home() {
                     <div className=" grid grid-cols-3 lg:grid-cols-1">
                       <Image
                         src={"/images/MCSkin.png"}
-                        height={600}
+                        height={100}
                         width={responsiveWidth}
                         alt={"Avatar model"}
                         className={`transition-all duration-700 flex `}
                       />
+                      {/* {responsiveWidth ? <div>Loaded {responsiveWidth}</div> : <div>Loading {responsiveWidth}</div>} */}
                       <div className="m-2 col-span-2 lg:hidden">
                         <div className="text-sm lg:text-xl font-semibold text-white/80">{profile.position}</div>
                         <div className="text-xl max-md:hidden">{profile.name.first} • {profile.location.city}, {profile.location.country}</div>
@@ -85,7 +96,6 @@ export default function Home() {
                           <div className="text-sm">{profile.location.city}, {profile.location.country}</div>
                         </div>
                       </div>
-
                     </div>
                     {/* <img src="/images/MCSkin.png" className="scale-50"></img> */}
                     <div className="col-span-3">

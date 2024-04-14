@@ -49,22 +49,32 @@ const stackDef = [
     "Next.js is a React framework that enables server-side rendering and static site generation for React applications. It allows you to build web applications with speed and efficiency, providing a great developer experience.",
     "PostgreSQL is a powerful, open-source object-relational database system. It's known for its reliability, robustness, and performance, making it a popular choice for many applications.",
 ]
+
+const calculateResponsiveWidth = (width: number) => {
+    return width <= 768 ? 42 : width <= 1024 ? 50 : width <= 1280 ? 60 : 88;
+};
+
 const useResponsiveWidth = () => {
-    const [screenWidth, setScreenWidth] = useState(typeof window !== 'undefined' ? window.innerWidth : 1080);
+    const [screenWidth, setScreenWidth] = useState(window.innerWidth);
+    const [responsiveWidth, setResponsiveWidth] = useState(calculateResponsiveWidth(screenWidth));
 
     useEffect(() => {
-        const handleResize = () => setScreenWidth(window.innerWidth);
+        const handleResize = () => {
+            setScreenWidth(window.innerWidth);
+            setResponsiveWidth(calculateResponsiveWidth(window.innerWidth));
+        }
         window.addEventListener('resize', handleResize);
 
         return () => window.removeEventListener('resize', handleResize);
     }, []);
 
-    const responsiveWidth = screenWidth <= 768 ? 42 : screenWidth <= 1024 ? 58 : 88; // Adjust breakpoint as needed
+    // const responsiveWidth = screenWidth <= 768 ? 42 : screenWidth <= 1024 ? 58 : 88; // Adjust breakpoint as needed
 
     return responsiveWidth;
 };
 
 export function Toolbelt() {
+    const responsiveWidth = useResponsiveWidth();
     const [current, setCurrent] = React.useState(0)
     React.useEffect(() => {
         const interval = setInterval(() => {
@@ -89,8 +99,8 @@ export function Toolbelt() {
 
     return (
         <Card>
-            <CardContent className="p-6">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <CardContent className="p-6 max-md:p-4">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-md:gap-2">
                     <div className="grid lg:grid-cols-2">
                         <div className="grid grid-cols-4 lg:grid-cols-2 gap-4">
                             {Array.from(stacks).map((_, index) => {
@@ -113,17 +123,16 @@ export function Toolbelt() {
                                 key={current}
                                 priority
                                 src={stacks[current]}
-                                height={useResponsiveWidth()}
-                                width={useResponsiveWidth()}
+                                height={responsiveWidth}
+                                width={responsiveWidth}
                                 alt="Logo"
                                 className="transition-all duration-300 ease-in-out"
                             />
                             <div className="mt-2 font-medium text-center">{stackNames[current]}</div>
                         </Card>
-
                     </div>
                     <div className="lg:flex-1 h-full justify-between">
-                        <div className="grid grid-flow-row my-2 xl:my-4">
+                        <div className="grid grid-flow-row my-1 xl:my-4">
                             <div>
                                 <div className="text-lg font-semibold">{stackNames[current]}</div>
                                 <div className="text-xs md:text-sm ">
