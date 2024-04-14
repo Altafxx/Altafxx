@@ -118,7 +118,7 @@ export function Toolbelt() {
                                 )
                             })}
                         </div>
-                        <Card className="flex flex-col items-center justify-center py-2 text-center  select-none shadow-md max-sm:hidden">
+                        <Card className="flex flex-col items-center justify-center py-2 text-center  select-none shadow-md">
                             <Image
                                 key={current}
                                 priority
@@ -131,7 +131,7 @@ export function Toolbelt() {
                             <div className="mt-2 font-medium text-center">{stackNames[current]}</div>
                         </Card>
                     </div>
-                    <div className="lg:flex-1 h-full justify-between">
+                    <div className="lg:flex-1 h-full justify-between max-sm:hidden">
                         <div className="grid grid-flow-row my-1 xl:my-4">
                             <div>
                                 <div className="text-lg font-semibold">{stackNames[current]}</div>
