@@ -20,6 +20,15 @@ export default function Home() {
   const [personalInfo, setPersonalInfo] = useState(true);
 
   const togglePersonalInfo = () => setPersonalInfo(!personalInfo)
+  useEffect(() => { }, [personalInfo])
+
+  function closePage(action?: Function) {
+    var mouseClick = new Audio("sounds/mouse-click.mp3");
+    mouseClick.play();
+
+    if (action) action()
+    return;
+  }
 
   return (
     <main>
@@ -48,7 +57,8 @@ export default function Home() {
                 <div className="grid grid-flow-col gap-2 absolute right-0 mr-3 pt-0 sm:pt-1">
                   <div className="bg-green-500 w-3 h-3 md:w-4 md:h-4 rounded-full cursor-pointer" />
                   <div className="bg-yellow-500 w-3 h-3 md:w-4 md:h-4 rounded-full cursor-pointer" />
-                  <div className="bg-red-500 w-3 h-3 md:w-4 md:h-4 rounded-full cursor-pointer" onClick={() => { togglePersonalInfo() }} />
+                  <div className="bg-red-500 w-3 h-3 md:w-4 md:h-4 rounded-full cursor-pointer"
+                    onClick={() => { closePage(togglePersonalInfo) }} />
                 </div>
               </div>
               <div>
