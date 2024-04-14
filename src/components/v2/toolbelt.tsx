@@ -50,30 +50,7 @@ const stackDef = [
     "PostgreSQL is a powerful, open-source object-relational database system. It's known for its reliability, robustness, and performance, making it a popular choice for many applications.",
 ]
 
-// const calculateResponsiveWidth = (width: number) => {
-//     return width <= 768 ? 42 : width <= 1024 ? 50 : width <= 1280 ? 60 : 88;
-// };
-
-// const useResponsiveWidth = () => {
-//     const [screenWidth, setScreenWidth] = useState(0);
-//     const [responsiveWidth, setResponsiveWidth] = useState(calculateResponsiveWidth(screenWidth));
-
-//     useEffect(() => {
-//         const handleResize = () => {
-//             setScreenWidth(window.innerWidth);
-//             setResponsiveWidth(calculateResponsiveWidth(window.innerWidth));
-//         }
-//         window.addEventListener('resize', handleResize);
-
-//         return () => window.removeEventListener('resize', handleResize);
-//     }, []);
-
-//     // const responsiveWidth = screenWidth <= 768 ? 42 : screenWidth <= 1024 ? 58 : 88; // Adjust breakpoint as needed
-
-//     return responsiveWidth;
-// };
-
-export function Toolbelt() {
+export default function Toolbelt() {
     // const responsiveWidth = useResponsiveWidth();
     const [current, setCurrent] = useState(0)
     React.useEffect(() => {
