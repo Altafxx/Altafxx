@@ -53,15 +53,18 @@ const stackDef = [
 export default function Toolbelt() {
     // const responsiveWidth = useResponsiveWidth();
     const [current, setCurrent] = useState(0)
+    const [pauseCurrent, setPauseCurrent] = useState(0)
     React.useEffect(() => {
-        const interval = setInterval(() => {
-            setCurrent(current => (current + 1) % stacks.length);
-        }, 2000);
-        return () => clearInterval(interval);
-    }, []);
 
+        const interval = setInterval(() => {
+            pauseCurrent > 0 ? setPauseCurrent((prev) => prev - 1) : setCurrent(current => (current + 1) % stacks.length)
+        }, pauseCurrent > 0 ? 1000 : 2000);
+
+        return () => clearInterval(interval);
+    }, [pauseCurrent]);
 
     function clickFunc(index: number) {
+        setPauseCurrent(5)
         if (current === index) {
             var mouseClick = new Audio("sounds/mouse-click.mp3");
             mouseClick.play();
