@@ -9,6 +9,7 @@ const font = Inter({
 })
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://danielaltaf.dev/'),
   title: 'Daniel Altaf',
   description: 'Just a simple software engineer portfolio',
   openGraph: {
