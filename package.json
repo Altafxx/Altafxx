@@ -23,7 +23,6 @@
     "tailwindcss-animate": "^1.0.7",
     "tailwindcss-bg-patterns": "^0.3.0",
     "zustand": "^4.5.2"
-    "tailwindcss-animate": "^1.0.7"
   },
   "devDependencies": {
     "@types/node": "^20",
