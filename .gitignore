@@ -20,6 +20,7 @@
 .DS_Store
 *.pem
 .vscode
+/ignore
 
 # debug
 npm-debug.log*
