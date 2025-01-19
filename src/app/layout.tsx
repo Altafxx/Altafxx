@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import Head from 'next/head'
 import { Inter } from 'next/font/google'
 import { cn } from "@/lib/utils"
-import './globals.css'
+import '../styles/globals.css'
 
 const font = Inter({
   weight: ['400', '500', '700', '900'],
@@ -45,12 +45,7 @@ export default function RootLayout({
         <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png" />
         <link rel="icon" type="image/png" href="/images/favicon.ico" />
       </Head>
-      <body className=
-        {cn(
-          "min-h-screen flex flex-col text-justify bg-background font-sans",
-          font.variable
-        )}>
-        {/* <main className='py-12 px-8 md:px-12 xl:px-24 flex-1 overflow-y-auto relative'> */}
+      <body className={cn(font.variable)}>
         {children}
       </body>
     </html>
