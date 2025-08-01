@@ -1,0 +1,339 @@
+{
+    "name": {
+        "first": "Daniel Altaf",
+        "last": "Hasnan"
+    },
+    "location": {
+        "city": "Rawang",
+        "country": "Malaysia"
+    },
+    "position": "Fullstack Software Engineer",
+    "social": [
+        {
+            "name": "LinkedIn",
+            "show": true,
+            "link": [
+                "https://",
+                "linkedin.com/in/danielaltaf"
+            ]
+        },
+        {
+            "name": "GitHub",
+            "show": true,
+            "link": [
+                "https://",
+                "github.com/altafxx"
+            ]
+        },
+        {
+            "name": "Website",
+            "show": true,
+            "link": [
+                "https://",
+                "danielaltaf.dev"
+            ]
+        },
+        {
+            "name": "Email",
+            "show": true,
+            "link": [
+                "mailto:",
+                "altafhasnan@gmail.com"
+            ]
+        }
+    ],
+    "experience": [
+        {
+            "company": "Qbeep Intelligent Systems Sdn Bhd",
+            "position": "Software Engineer cum. DevOps Engineer",
+            "start": {
+                "timestamp": 1706745600000,
+                "month": "February",
+                "year": 2024
+            },
+            "end": {
+                "timestamp": null,
+                "month": "present",
+                "year": null
+            },
+            "duration": "1 Year 7 Months",
+            "contribution": [
+                "Developed and maintained key features for Smart MF Dealers (smartmfdealers.com)",
+                "Developed a responsive HTTP video engine microservice, enabling seamless video streaming across devices",
+                "Developed a webhook integration to facilitate seamless communication between application microservices",
+                "Developed a suite of microservices for automated generation of purchase orders, sales orders, and invoices, streamlining business processes and reducing administrative overhead",
+                "Developed a PDF compositor microservice, optimizing document storage and transfer",
+                "Led the development of Food Surplus Intelligence Platform, ResQMeals (resqmeals.app) which currently in beta phase",
+                "Managed system uptime, security, and optimization across cloud infrastructure across Hostinger, Alibaba Cloud and Azure platforms",
+                "Implemented CI/CD pipelines using GitHub Actions, automating the build, test, and deployment processes",
+                "Deployed and managed a self-hosted team management software solution, improving team collaboration and communication",
+                "Implemented a product uptime monitoring solution, enabling proactive identification and resolution of system issues, thus minimizing downtime and ensuring service availability",
+                "Development of inhouse bot to automate server administration tasks"
+            ]
+        },
+        {
+            "company": "Qbeep Intelligent Systems Sdn Bhd",
+            "position": "Software Engineer",
+            "start": {
+                "timestamp": 1706745600000,
+                "month": "February",
+                "year": 2024
+            },
+            "end": {
+                "timestamp": 1724889600000,
+                "month": "August",
+                "year": 2025
+            },
+            "duration": "1 Year 7 Months",
+            "contribution": []
+        },
+        {
+            "company": "SnapBoss.ai Sdn Bhd",
+            "position": "Chief Software Architect, Founding Software Engineer",
+            "start": {
+                "timestamp": 1709251200000,
+                "month": "March",
+                "year": 2024
+            },
+            "end": {
+                "timestamp": 1714521600000,
+                "month": "May",
+                "year": 2025
+            },
+            "duration": "1 Year 2 Months",
+            "contribution": [
+                "Development involvement for AI mannequin model generator",
+                "Development involvement for business landing page (snapboss.ai)",
+                "Development involvement for TPI Violinist (tpiviolinist.com)",
+                "Implemented CI/CD pipelines using GitHub Actions, automating the build, test, and deployment processes",
+                "Deployed and managed a self-hosted team management software solution, improving team collaboration and communication",
+                "Develop a real-time notification system utilizing Discord to deliver critical updates, improving communication for a key event"
+            ]
+        },
+        {
+            "company": "Vireserve Sdn Bhd",
+            "position": "Software Engineer",
+            "start": {
+                "timestamp": 1677636000000,
+                "month": "March",
+                "year": 2023
+            },
+            "end": {
+                "timestamp": 1706436000000,
+                "month": "January",
+                "year": 2024
+            },
+            "duration": "11 Months",
+            "contribution": [
+                "Development involvement for Risda e-Banci (banci.risda.gov.my)",
+                "Development involvement for RTM ETVCMS (etvcms.rtm.gov.my)",
+                "Discussion on RTM ETVCMS server architecture",
+                "Development of Digital Security Platform (dsv.vireserve.com)",
+                "Served as a document owner for the ISO 27001 certification process, contributing to the development and maintenance of key documentation for both internal ISMS audits and the SIRIM audit"
+            ]
+        },
+        {
+            "company": "Vireserve Sdn Bhd",
+            "position": "Intern",
+            "start": {
+                "timestamp": 1662948000000,
+                "month": "September",
+                "year": 2022
+            },
+            "end": {
+                "timestamp": 1677578400000,
+                "month": "February",
+                "year": 2023
+            },
+            "duration": "6 Months",
+            "contribution": [
+                "Creating frontend using Flutter for web, based on UI design that has been approved earlier",
+                "Resolving issue which causing Firebase Firestore request to spike up to 50k with only 5 users",
+                "Help preparing documentation for ISMS internal and SIRIM Audit"
+            ]
+        }
+    ],
+    "education": [
+        {
+            "qualification": "Diploma",
+            "course": "Computer Science",
+            "location": "UiTM Cawangan Perlis",
+            "cgpa": 3.4,
+            "start": {
+                "month": "October",
+                "year": 2020
+            },
+            "end": {
+                "month": "February",
+                "year": 2023
+            },
+            "achievement": [
+                {
+                    "position": "Batch Representative",
+                    "association": "October 2020 - February 2023"
+                }
+            ]
+        }
+    ],
+    "university_experience": [
+        {
+            "organization": "Jawatankuasa Perwakilan Non Resident Sesi 2022/2023",
+            "position": "Exco Multimedia",
+            "start": {
+                "month": "January",
+                "year": 2022
+            },
+            "end": {
+                "month": "January",
+                "year": 2023
+            },
+            "activities": [
+                "Bakul Makanan Bulan Ramadhan",
+                "HEP Prihatin 2022 (BHEP UiTM Perlis, PTPTN, IKAF, JATI)",
+                "Program Bubur Lambuk (Staf UiTMPs, MPP, JPNR, JPK, JPS)"
+            ]
+        },
+        {
+            "organization": "Computer Science Diploma Students Associations (COSMITs)",
+            "position": "President",
+            "start": {
+                "month": "September",
+                "year": 2021
+            },
+            "end": {
+                "month": "August",
+                "year": 2022
+            },
+            "activities": [
+                "Gala Night (COSMITs X Q-Science)",
+                "Community Service: WE CARE (COSMITs X BAFINS)",
+                "COSMITs Semester Grand Meeting 2021",
+                "Bual Bicara: Kerjaya Hari Esok",
+                "COSMITs Annual Grand Meeting 2021"
+            ]
+        },
+        {
+            "organization": "Biro Logistics, Protocol",
+            "position": "Protocol Officer",
+            "start": {
+                "month": "March",
+                "year": 2021
+            },
+            "end": {
+                "month": "August",
+                "year": 2022
+            },
+            "activities": [
+                "COSMITs E-Sports 2020",
+                "COSMITs Semester Grand Meeting 2020"
+            ]
+        },
+        {
+            "organization": "Game Master Clan (GMC UiTMPs)",
+            "position": "President",
+            "start": {
+                "month": "September",
+                "year": 2021
+            },
+            "end": {
+                "month": "August",
+                "year": 2022
+            },
+            "activities": [
+                "Tuah Championship 2022",
+                "Tuah Championship 2021"
+            ]
+        }
+    ],
+    "open_source": [
+        {
+            "name": "Cari Surau",
+            "site": [
+                "https://",
+                "carisurau.com"
+            ],
+            "description": "One stop platform for searching surau around Malaysia"
+        },
+        {
+            "name": "Malaysia API",
+            "site": [
+                "https://",
+                "malaysiaapi.danielaltaf.dev"
+            ],
+            "description": "Centralize API of open data from Government of Malaysia, Non Government Organization and third party sources"
+        },
+        {
+            "name": "Ideaspace",
+            "site": [
+                "https://",
+                "ideaspace.nrmngdds.com"
+            ],
+            "description": "Project idea dumping site where one's idea could be a reality"
+        },
+        {
+            "name": "Sedekah Je",
+            "site": [
+                "https://",
+                "sedekah.je"
+            ],
+            "description": "Malaysian platform that facilitates QR code-based donations, making charitable giving more accessible and convenient"
+        },
+        {
+            "name": "AevumFlow",
+            "site": [
+                "https://",
+                "aevumflow.danielaltaf.dev"
+            ],
+            "description": "Malaysian platform that facilitates QR code-based donations, making charitable giving more accessible and convenient"
+        }
+    ],
+    "skill": {
+        "language": [
+            "HTML, CSS, Javascript / Typescript",
+            "PHP",
+            "Bash",
+            "GoLang",
+            "Python"
+        ],
+        "framework": [
+            [
+                "Next JS & React JS",
+                "Typescript / Javascript"
+            ],
+            [
+                "Next JS / Express JS",
+                "Node JS (Typescript / Javascript)"
+            ],
+            [
+                "Laravel",
+                "PHP"
+            ],
+            [
+                "Flutter",
+                "Dart"
+            ],
+            [
+                "Gin",
+                "GoLang"
+            ],
+            [
+                "Flask",
+                "Python"
+            ]
+        ],
+        "database": [
+            "MySQL, PostgreSQL + PostGIS",
+            "Firebase Firestore (NoSQL)"
+        ],
+        "ui": [
+            "Tailwind CSS / Bootstrap",
+            "Docker",
+            "Microsoft Azure / Google Cloud Platform",
+            "Hostinger Cloud / Vercel",
+            "Windows & Linux",
+            "Postman / Curl",
+            "Canva / Figma",
+            "Technical Documentation"
+        ]
+    }
+}

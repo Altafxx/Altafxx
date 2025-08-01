@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -177,5 +179,374 @@ body {
 
   body {
     @apply bg-background text-foreground;
+    overflow: hidden;
   }
+}
+
+/* Custom styles for v2 interface */
+.v2-interface {
+  font-family: 'JetBrains Mono', monospace;
+  font-feature-settings: 'liga' 1, 'calt' 1;
+}
+
+/* Custom scrollbar for v2 windows */
+.v2-window-content::-webkit-scrollbar {
+  width: 14px;
+}
+
+.v2-window-content::-webkit-scrollbar-track {
+  background: rgba(15, 23, 42, 0.9);
+  border-radius: 7px;
+  border: 1px solid rgba(71, 85, 105, 0.4);
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+
+.v2-window-content::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg,
+      rgba(148, 163, 184, 0.4) 0%,
+      rgba(100, 116, 139, 0.5) 50%,
+      rgba(71, 85, 105, 0.4) 100%);
+  border-radius: 7px;
+  border: 1px solid rgba(148, 163, 184, 0.2);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.1),
+    0 1px 2px rgba(0, 0, 0, 0.1);
+  transition: all 0.2s ease;
+}
+
+.v2-window-content::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg,
+      rgba(148, 163, 184, 0.6) 0%,
+      rgba(100, 116, 139, 0.7) 50%,
+      rgba(71, 85, 105, 0.6) 100%);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.15),
+    0 2px 4px rgba(0, 0, 0, 0.15);
+  transform: scaleX(1.05);
+}
+
+.v2-window-content::-webkit-scrollbar-thumb:active {
+  background: linear-gradient(180deg,
+      rgba(100, 116, 139, 0.7) 0%,
+      rgba(71, 85, 105, 0.8) 50%,
+      rgba(51, 65, 85, 0.7) 100%);
+  transform: scaleX(0.98);
+}
+
+.v2-window-content::-webkit-scrollbar-corner {
+  background: rgba(15, 23, 42, 0.9);
+}
+
+/* Firefox scrollbar and base styles */
+.v2-window-content {
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(100, 116, 139, 0.5) rgba(15, 23, 42, 0.9);
+}
+
+/* Desktop view - larger screens */
+@media (min-width: 1025px) {
+  .v2-window-content {
+    max-height: calc(100vh - 320px);
+  }
+}
+
+/* Tablet view */
+@media (max-width: 1024px) and (min-width: 769px) {
+  .v2-window-content {
+    max-height: calc(100vh - 240px);
+  }
+}
+
+/* Mobile view */
+@media (max-width: 768px) {
+  .v2-window-content {
+    max-height: calc(100vh - 180px);
+  }
+}
+
+/* UIverse Wavy Pattern - Exact Implementation with Pink-Purple Colors */
+.wavy-pattern-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  z-index: 1;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  --s: 100px;
+  /* control the size */
+  --c1: #f472b6;
+  /* pink-400 */
+  --c2: #a855f7;
+  /* purple-500 */
+
+  --_g: var(--c2) 4% 14%, var(--c1) 14% 24%, var(--c2) 22% 34%,
+    var(--c1) 34% 44%, var(--c2) 44% 56%, var(--c1) 56% 66%, var(--c2) 66% 76%,
+    var(--c1) 76% 86%, var(--c2) 86% 96%;
+  background: radial-gradient(100% 100% at 100% 0,
+      var(--c1) 4%,
+      var(--_g),
+      #0008 96%,
+      #0000),
+    radial-gradient(100% 100% at 0 100%,
+      #0000,
+      #0008 4%,
+      var(--_g),
+      var(--c1) 96%) var(--c1);
+  background-size: var(--s) var(--s);
+}
+
+/* Enhanced Menu Bar Styles */
+.enhanced-menu-bar {
+  background: linear-gradient(135deg,
+      rgba(236, 72, 153, 0.25) 0%,
+      rgba(168, 85, 247, 0.25) 35%,
+      rgba(34, 211, 238, 0.25) 100%);
+  backdrop-filter: blur(25px) saturate(180%);
+  border-top: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 12px 12px 0 0;
+  box-shadow:
+    0 -8px 32px rgba(0, 0, 0, 0.15),
+    inset 0 1px 0 rgba(255, 255, 255, 0.3),
+    0 0 0 1px rgba(255, 255, 255, 0.1);
+  overflow: hidden;
+  height: 60px;
+}
+
+.enhanced-menu-bar::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg,
+      transparent 0%,
+      rgba(255, 255, 255, 0.5) 50%,
+      transparent 100%);
+  animation: shimmer 3s ease-in-out infinite;
+}
+
+@keyframes shimmer {
+
+  0%,
+  100% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 1;
+  }
+}
+
+.menu-dock {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 16px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow:
+    0 8px 32px rgba(0, 0, 0, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.3);
+}
+
+.menu-button {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow:
+    0 4px 16px rgba(0, 0, 0, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.3);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.menu-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg,
+      transparent,
+      rgba(255, 255, 255, 0.2),
+      transparent);
+  transition: left 0.5s;
+}
+
+.menu-button:hover::before {
+  left: 100%;
+}
+
+.menu-button:hover {
+  background: rgba(255, 255, 255, 0.25);
+  transform: translateY(-3px) scale(1.05);
+  box-shadow:
+    0 16px 48px rgba(0, 0, 0, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.4),
+    0 0 20px rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.4);
+}
+
+.menu-button:active {
+  transform: translateY(-1px) scale(1.02);
+  box-shadow:
+    0 8px 24px rgba(0, 0, 0, 0.15),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+/* Menu indicator dots */
+.menu-indicators {
+  display: flex;
+  gap: 6px;
+  padding: 8px 12px;
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
+}
+
+.menu-indicator {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+  position: relative;
+}
+
+.menu-indicator::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: all 0.3s ease;
+}
+
+.menu-indicator:hover::before {
+  width: 16px;
+  height: 16px;
+}
+
+.menu-indicator.active {
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow:
+    0 0 16px rgba(255, 255, 255, 0.6),
+    0 0 32px rgba(255, 255, 255, 0.3);
+  transform: scale(1.2);
+}
+
+.menu-indicator:hover {
+  background: rgba(255, 255, 255, 0.6);
+  transform: scale(1.1);
+}
+
+/* Status panel */
+.status-panel {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 16px;
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 25px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.status-time {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.8);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+  min-width: 45px;
+  text-align: center;
+}
+
+.status-indicator {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #10b981;
+  box-shadow:
+    0 0 12px rgba(16, 185, 129, 0.6),
+    0 0 24px rgba(16, 185, 129, 0.3);
+  animation: pulse 2s ease-in-out infinite;
+  position: relative;
+}
+
+.status-indicator::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  border-radius: 50%;
+  border: 1px solid rgba(16, 185, 129, 0.3);
+  animation: ripple 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  50% {
+    transform: scale(1.1);
+    opacity: 0.8;
+  }
+}
+
+@keyframes ripple {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  100% {
+    transform: scale(2);
+    opacity: 0;
+  }
+}
+
+/* Additional menu buttons */
+.menu-action-button {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  backdrop-filter: blur(10px);
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 14px;
+}
+
+.menu-action-button:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  color: rgba(255, 255, 255, 0.9);
 }
