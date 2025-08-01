@@ -31,6 +31,15 @@ export default function Home() {
   const [currentTime, setCurrentTime] = useState<string>('')
   const [mounted, setMounted] = useState(false)
 
+  // Popup window states
+  const [settingsOpen, setSettingsOpen] = useState(false)
+  const [themeOpen, setThemeOpen] = useState(false)
+  const [notificationsOpen, setNotificationsOpen] = useState(false)
+  const [homeOpen, setHomeOpen] = useState(false)
+  const [applicationsOpen, setApplicationsOpen] = useState(false)
+  const [filesOpen, setFilesOpen] = useState(false)
+  const [terminalOpen, setTerminalOpen] = useState(false)
+
   useEffect(() => {
     setMounted(true)
     const updateTime = () => {
@@ -218,37 +227,30 @@ export default function Home() {
         <div className="enhanced-menu-bar w-full h-16 fixed bottom-0 flex justify-between items-center px-6 z-50">
           {/* Left side - Quick actions */}
           <div className="flex items-center gap-3">
-            <div className="menu-action-button" title="Settings">
+            <div className="menu-action-button" title="Settings" onClick={() => { setSettingsOpen(!settingsOpen); playSound('mouse-click', 0.5); }}>
               ⚙️
             </div>
-            <div className="menu-action-button" title="Theme">
+            <div className="menu-action-button" title="Theme" onClick={() => { setThemeOpen(!themeOpen); playSound('mouse-click', 0.5); }}>
               🎨
             </div>
-            <div className="menu-action-button" title="Notifications">
+            <div className="menu-action-button" title="Notifications" onClick={() => { setNotificationsOpen(!notificationsOpen); playSound('mouse-click', 0.5); }}>
               🔔
             </div>
           </div>
 
           {/* Center - Main dock */}
           <div className="menu-dock">
-            <div className="menu-button rounded-full w-fit p-4 cursor-pointer" title="Home">
+            <div className="menu-button rounded-full w-fit p-4 cursor-pointer" title="Home" onClick={() => { setHomeOpen(!homeOpen); playSound('mouse-click', 0.5); }}>
               {doorLogo}
             </div>
 
-            <div className="menu-indicators">
-              <div className="menu-indicator active" title="Desktop 1"></div>
-              <div className="menu-indicator" title="Desktop 2"></div>
-              <div className="menu-indicator" title="Desktop 3"></div>
-              <div className="menu-indicator" title="Desktop 4"></div>
-            </div>
-
-            <div className="menu-action-button" title="Applications">
+            <div className="menu-action-button" title="Applications" onClick={() => { setApplicationsOpen(!applicationsOpen); playSound('mouse-click', 0.5); }}>
               📱
             </div>
-            <div className="menu-action-button" title="Files">
+            <div className="menu-action-button" title="Files" onClick={() => { setFilesOpen(!filesOpen); playSound('mouse-click', 0.5); }}>
               📁
             </div>
-            <div className="menu-action-button" title="Terminal">
+            <div className="menu-action-button" title="Terminal" onClick={() => { setTerminalOpen(!terminalOpen); playSound('mouse-click', 0.5); }}>
               💻
             </div>
           </div>
@@ -269,6 +271,182 @@ export default function Home() {
             <div className="status-indicator" title="Online"></div>
           </div>
         </div>
+
+        {/* Popup Windows */}
+        {settingsOpen && (
+          <div className="fixed inset-0 bg-black/20 backdrop-blur-sm z-40 flex items-center justify-center" onClick={() => setSettingsOpen(false)}>
+            <div className="bg-gradient-to-br from-amber-50 to-orange-100 rounded-lg shadow-2xl border border-amber-200 w-96 max-w-[90vw]" onClick={(e) => e.stopPropagation()}>
+              <div className="flex items-center justify-between p-4 border-b border-amber-200">
+                <h3 className="text-lg font-semibold text-amber-900">⚙️ Settings</h3>
+                <button onClick={() => setSettingsOpen(false)} className="text-amber-600 hover:text-amber-800 text-xl">×</button>
+              </div>
+              <div className="p-4 space-y-3">
+                <div className="flex items-center justify-between">
+                  <span className="text-amber-800">Dark Mode</span>
+                  <input type="checkbox" className="rounded" />
+                </div>
+                <div className="flex items-center justify-between">
+                  <span className="text-amber-800">Notifications</span>
+                  <input type="checkbox" defaultChecked className="rounded" />
+                </div>
+                <div className="flex items-center justify-between">
+                  <span className="text-amber-800">Sound Effects</span>
+                  <input type="checkbox" defaultChecked className="rounded" />
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
+
+        {themeOpen && (
+          <div className="fixed inset-0 bg-black/20 backdrop-blur-sm z-40 flex items-center justify-center" onClick={() => setThemeOpen(false)}>
+            <div className="bg-gradient-to-br from-amber-50 to-orange-100 rounded-lg shadow-2xl border border-amber-200 w-96 max-w-[90vw]" onClick={(e) => e.stopPropagation()}>
+              <div className="flex items-center justify-between p-4 border-b border-amber-200">
+                <h3 className="text-lg font-semibold text-amber-900">🎨 Theme</h3>
+                <button onClick={() => setThemeOpen(false)} className="text-amber-600 hover:text-amber-800 text-xl">×</button>
+              </div>
+              <div className="p-4 space-y-3">
+                <div className="grid grid-cols-3 gap-3">
+                  <div className="h-16 bg-gradient-to-br from-pink-300 to-purple-300 rounded cursor-pointer border-2 border-transparent hover:border-amber-400"></div>
+                  <div className="h-16 bg-gradient-to-br from-blue-300 to-cyan-300 rounded cursor-pointer border-2 border-transparent hover:border-amber-400"></div>
+                  <div className="h-16 bg-gradient-to-br from-green-300 to-teal-300 rounded cursor-pointer border-2 border-transparent hover:border-amber-400"></div>
+                  <div className="h-16 bg-gradient-to-br from-amber-300 to-orange-300 rounded cursor-pointer border-2 border-amber-400"></div>
+                  <div className="h-16 bg-gradient-to-br from-gray-300 to-slate-300 rounded cursor-pointer border-2 border-transparent hover:border-amber-400"></div>
+                  <div className="h-16 bg-gradient-to-br from-rose-300 to-pink-300 rounded cursor-pointer border-2 border-transparent hover:border-amber-400"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
+
+        {notificationsOpen && (
+          <div className="fixed inset-0 bg-black/20 backdrop-blur-sm z-40 flex items-center justify-center" onClick={() => setNotificationsOpen(false)}>
+            <div className="bg-gradient-to-br from-amber-50 to-orange-100 rounded-lg shadow-2xl border border-amber-200 w-96 max-w-[90vw]" onClick={(e) => e.stopPropagation()}>
+              <div className="flex items-center justify-between p-4 border-b border-amber-200">
+                <h3 className="text-lg font-semibold text-amber-900">🔔 Notifications</h3>
+                <button onClick={() => setNotificationsOpen(false)} className="text-amber-600 hover:text-amber-800 text-xl">×</button>
+              </div>
+              <div className="p-4 space-y-3">
+                <div className="text-center text-amber-700">
+                  <p>No new notifications</p>
+                  <p className="text-sm text-amber-600 mt-2">You're all caught up! 🎉</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
+
+        {homeOpen && (
+          <div className="fixed inset-0 bg-black/20 backdrop-blur-sm z-40 flex items-center justify-center" onClick={() => setHomeOpen(false)}>
+            <div className="bg-gradient-to-br from-amber-50 to-orange-100 rounded-lg shadow-2xl border border-amber-200 w-96 max-w-[90vw]" onClick={(e) => e.stopPropagation()}>
+              <div className="flex items-center justify-between p-4 border-b border-amber-200">
+                <h3 className="text-lg font-semibold text-amber-900">🏠 Home</h3>
+                <button onClick={() => setHomeOpen(false)} className="text-amber-600 hover:text-amber-800 text-xl">×</button>
+              </div>
+              <div className="p-4 space-y-3">
+                <div className="text-center text-amber-800">
+                  <h4 className="font-semibold mb-2">Welcome to Portfolio v2</h4>
+                  <p className="text-sm">Navigate through the folders above to explore my experience, projects, and education.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
+
+        {applicationsOpen && (
+          <div className="fixed inset-0 bg-black/20 backdrop-blur-sm z-40 flex items-center justify-center" onClick={() => setApplicationsOpen(false)}>
+            <div className="bg-gradient-to-br from-amber-50 to-orange-100 rounded-lg shadow-2xl border border-amber-200 w-96 max-w-[90vw]" onClick={(e) => e.stopPropagation()}>
+              <div className="flex items-center justify-between p-4 border-b border-amber-200">
+                <h3 className="text-lg font-semibold text-amber-900">📱 Applications</h3>
+                <button onClick={() => setApplicationsOpen(false)} className="text-amber-600 hover:text-amber-800 text-xl">×</button>
+              </div>
+              <div className="p-4">
+                <div className="grid grid-cols-3 gap-3">
+                  <div className="text-center p-3 rounded hover:bg-amber-100 cursor-pointer">
+                    <div className="text-2xl mb-1">💻</div>
+                    <div className="text-xs text-amber-800">Code Editor</div>
+                  </div>
+                  <div className="text-center p-3 rounded hover:bg-amber-100 cursor-pointer">
+                    <div className="text-2xl mb-1">🌐</div>
+                    <div className="text-xs text-amber-800">Browser</div>
+                  </div>
+                  <div className="text-center p-3 rounded hover:bg-amber-100 cursor-pointer">
+                    <div className="text-2xl mb-1">📊</div>
+                    <div className="text-xs text-amber-800">Analytics</div>
+                  </div>
+                  <div className="text-center p-3 rounded hover:bg-amber-100 cursor-pointer">
+                    <div className="text-2xl mb-1">🎵</div>
+                    <div className="text-xs text-amber-800">Music</div>
+                  </div>
+                  <div className="text-center p-3 rounded hover:bg-amber-100 cursor-pointer">
+                    <div className="text-2xl mb-1">📝</div>
+                    <div className="text-xs text-amber-800">Notes</div>
+                  </div>
+                  <div className="text-center p-3 rounded hover:bg-amber-100 cursor-pointer">
+                    <div className="text-2xl mb-1">📧</div>
+                    <div className="text-xs text-amber-800">Mail</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
+
+        {filesOpen && (
+          <div className="fixed inset-0 bg-black/20 backdrop-blur-sm z-40 flex items-center justify-center" onClick={() => setFilesOpen(false)}>
+            <div className="bg-gradient-to-br from-amber-50 to-orange-100 rounded-lg shadow-2xl border border-amber-200 w-96 max-w-[90vw]" onClick={(e) => e.stopPropagation()}>
+              <div className="flex items-center justify-between p-4 border-b border-amber-200">
+                <h3 className="text-lg font-semibold text-amber-900">📁 Files</h3>
+                <button onClick={() => setFilesOpen(false)} className="text-amber-600 hover:text-amber-800 text-xl">×</button>
+              </div>
+              <div className="p-4 space-y-2">
+                <div className="flex items-center gap-3 p-2 rounded hover:bg-amber-100 cursor-pointer">
+                  <span className="text-xl">📄</span>
+                  <span className="text-amber-800">Resume.pdf</span>
+                </div>
+                <div className="flex items-center gap-3 p-2 rounded hover:bg-amber-100 cursor-pointer">
+                  <span className="text-xl">📁</span>
+                  <span className="text-amber-800">Projects</span>
+                </div>
+                <div className="flex items-center gap-3 p-2 rounded hover:bg-amber-100 cursor-pointer">
+                  <span className="text-xl">📁</span>
+                  <span className="text-amber-800">Documents</span>
+                </div>
+                <div className="flex items-center gap-3 p-2 rounded hover:bg-amber-100 cursor-pointer">
+                  <span className="text-xl">🖼️</span>
+                  <span className="text-amber-800">Images</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
+
+        {terminalOpen && (
+          <div className="fixed inset-0 bg-black/20 backdrop-blur-sm z-40 flex items-center justify-center" onClick={() => setTerminalOpen(false)}>
+            <div className="bg-gradient-to-br from-amber-50 to-orange-100 rounded-lg shadow-2xl border border-amber-200 w-96 max-w-[90vw]" onClick={(e) => e.stopPropagation()}>
+              <div className="flex items-center justify-between p-4 border-b border-amber-200">
+                <h3 className="text-lg font-semibold text-amber-900">💻 Terminal</h3>
+                <button onClick={() => setTerminalOpen(false)} className="text-amber-600 hover:text-amber-800 text-xl">×</button>
+              </div>
+              <div className="p-4">
+                <div className="bg-gray-900 rounded p-3 font-mono text-sm">
+                  <div className="text-green-400">$ whoami</div>
+                  <div className="text-white">developer</div>
+                  <div className="text-green-400 mt-2">$ pwd</div>
+                  <div className="text-white">/home/portfolio</div>
+                  <div className="text-green-400 mt-2">$ ls -la</div>
+                  <div className="text-white">
+                    <div>drwxr-xr-x experience/</div>
+                    <div>drwxr-xr-x projects/</div>
+                    <div>drwxr-xr-x education/</div>
+                    <div>-rw-r--r-- README.md</div>
+                  </div>
+                  <div className="text-green-400 mt-2">$ <span className="animate-pulse">_</span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
       </div>
     </main>
   );

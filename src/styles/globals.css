@@ -303,16 +303,16 @@ body {
 /* Enhanced Menu Bar Styles */
 .enhanced-menu-bar {
   background: linear-gradient(135deg,
-      rgba(236, 72, 153, 0.25) 0%,
-      rgba(168, 85, 247, 0.25) 35%,
-      rgba(34, 211, 238, 0.25) 100%);
+      rgba(203, 163, 92, 0.3) 0%,
+      rgba(248, 225, 183, 0.25) 50%,
+      rgba(203, 163, 92, 0.2) 100%);
   backdrop-filter: blur(25px) saturate(180%);
-  border-top: 1px solid rgba(255, 255, 255, 0.3);
+  border-top: 1px solid rgba(203, 163, 92, 0.4);
   border-radius: 12px 12px 0 0;
   box-shadow:
     0 -8px 32px rgba(0, 0, 0, 0.15),
-    inset 0 1px 0 rgba(255, 255, 255, 0.3),
-    0 0 0 1px rgba(255, 255, 255, 0.1);
+    inset 0 1px 0 rgba(248, 225, 183, 0.4),
+    0 0 0 1px rgba(203, 163, 92, 0.2);
   overflow: hidden;
   height: 60px;
 }
@@ -326,7 +326,7 @@ body {
   height: 1px;
   background: linear-gradient(90deg,
       transparent 0%,
-      rgba(255, 255, 255, 0.5) 50%,
+      rgba(248, 225, 183, 0.6) 50%,
       transparent 100%);
   animation: shimmer 3s ease-in-out infinite;
 }
