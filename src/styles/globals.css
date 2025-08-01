@@ -279,10 +279,10 @@ body {
   height: 100%;
   --s: 100px;
   /* control the size */
-  --c1: #f472b6;
-  /* pink-400 */
-  --c2: #a855f7;
-  /* purple-500 */
+  --c1: rgb(231, 204, 156);
+  /* golden yellow */
+  --c2: #F8E1B7;
+  /* light cream */
 
   --_g: var(--c2) 4% 14%, var(--c1) 14% 24%, var(--c2) 22% 34%,
     var(--c1) 34% 44%, var(--c2) 44% 56%, var(--c1) 56% 66%, var(--c2) 66% 76%,

@@ -73,7 +73,7 @@ export default function Home() {
 
   return (
     <main className="v2-interface">
-      <div className="h-screen bg-gradient-to-br from-pink-400 via-purple-400 to-cyan-400 relative pb-20">
+      <div className="h-screen relative pb-20" style={{ background: 'linear-gradient(to bottom right, #CBA35C, #F8E1B7)' }}>
         {/* UIverse Wavy Pattern Background */}
         <div className="wavy-pattern-container"></div>
         <div className="mx-6 p-1 flex justify-between relative z-10">
