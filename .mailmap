@@ -1,0 +1,4 @@
+# Unify alt email to main identity for repository-level attribution
+# Format: Canonical Name <canonical@email> <old@email>
+Daniel Altaf <altafhasnan@gmail.com> <daniel.hasnan@qbeep.com>
+
