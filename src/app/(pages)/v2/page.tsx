@@ -329,7 +329,7 @@ export default function Home() {
               <div className="p-4 space-y-3">
                 <div className="text-center text-amber-700">
                   <p>No new notifications</p>
-                  <p className="text-sm text-amber-600 mt-2">You're all caught up! 🎉</p>
+                  <p className="text-sm text-amber-600 mt-2">You&apos;re all caught up! 🎉</p>
                 </div>
               </div>
             </div>
