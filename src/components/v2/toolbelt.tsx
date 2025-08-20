@@ -5,49 +5,66 @@ import Image from "next/image"
 
 import { Card, CardContent } from "@/components/ui/card"
 import { useEffect, useState } from "react"
+import { playSound } from "@/utils/soundManager"
 
 const stacks = [
+    "/images/logo/light/typescript.svg",
+    "/images/logo/light/nextjs.svg",
+    "/images/logo/light/tailwind.svg",
+    "/images/logo/light/postgresql.svg",
+    "/images/logo/light/docker.svg",
     "/images/logo/light/git.svg",
     "/images/logo/light/vercel.svg",
-    "/images/logo/light/tailwind.svg",
-    "/images/logo/light/typescript.svg",
     "/images/logo/light/shadcnui.svg",
-    "/images/logo/light/prisma.svg",
-    "/images/logo/light/nextjs.svg",
-    "/images/logo/light/postgresql.svg"
+    "/images/logo/light/laravel.svg",
+    "/images/logo/light/flutter.svg",
+    "/images/logo/light/golang.svg",
+    "/images/logo/light/python.svg"
 ]
 
 const stackNames = [
+    "TypeScript",
+    "Next.js",
+    "Tailwind CSS",
+    "PostgreSQL",
+    "Docker",
     "Git",
     "Vercel",
-    "Tailwind",
-    "Typescript",
     "Shadcn/ui",
-    "Prisma",
-    "Next JS",
-    "Postgresql"
+    "Laravel",
+    "Flutter",
+    "Go",
+    "Python"
 ]
 
 const stackLinks = [
+    "https://www.typescriptlang.org/",
+    "https://nextjs.org/",
+    "https://tailwindcss.com/",
+    "https://www.postgresql.org/",
+    "https://www.docker.com/",
     "https://git-scm.com/",
     "https://vercel.com/",
-    "https://tailwindcss.com/",
-    "https://www.typescriptlang.org/",
     "https://ui.shadcn.com/",
-    "https://www.prisma.io/",
-    "https://nextjs.org/",
-    "https://www.postgresql.org/",
+    "https://laravel.com/",
+    "https://flutter.dev/",
+    "https://golang.org/",
+    "https://www.python.org/"
 ]
 
 const stackDef = [
-    "Git is a popular version control system for tracking changes in computer files. It's particularly useful for software development projects where multiple people collaborate on the code",
-    "Vercel is a cloud platform designed specifically for the frontend aspects of web development, often referred to as the \"Frontend Cloud\".  In simpler terms, it helps developers deploy and manage the user-facing parts of websites and web applications.",
-    "Tailwind CSS is a CSS framework unlike others. Instead of pre-built styles, it offers basic building blocks (utility classes) that you combine directly in your HTML for quick, custom website design.",
-    "Typescript is a superset of JavaScript that adds static typing to the language. It helps catch errors early in the development process, making your code more reliable and easier to maintain.",
-    "Shadcn/ui offers pre-built buttons, forms, etc. for your web apps. Just copy and paste! Save time, customize freely, and build accessible apps.",
-    "Prisma simplifies talking to your database. Define your data, write safe queries, and manage changes easily. It acts like a translator between your code and the database, making data management smooth.",
+    "TypeScript is a superset of JavaScript that adds static typing to the language. It helps catch errors early in the development process, making your code more reliable and easier to maintain.",
     "Next.js is a React framework that enables server-side rendering and static site generation for React applications. It allows you to build web applications with speed and efficiency, providing a great developer experience.",
+    "Tailwind CSS is a CSS framework unlike others. Instead of pre-built styles, it offers basic building blocks (utility classes) that you combine directly in your HTML for quick, custom website design.",
     "PostgreSQL is a powerful, open-source object-relational database system. It's known for its reliability, robustness, and performance, making it a popular choice for many applications.",
+    "Docker is a containerization platform that allows developers to package applications and their dependencies into lightweight, portable containers that can run consistently across different environments.",
+    "Git is a popular version control system for tracking changes in computer files. It's particularly useful for software development projects where multiple people collaborate on the code.",
+    "Vercel is a cloud platform designed specifically for the frontend aspects of web development, often referred to as the 'Frontend Cloud'. In simpler terms, it helps developers deploy and manage the user-facing parts of websites and web applications.",
+    "Shadcn/ui offers pre-built buttons, forms, etc. for your web apps. Just copy and paste! Save time, customize freely, and build accessible apps.",
+    "Laravel is a PHP web application framework with expressive, elegant syntax. It provides tools for routing, authentication, sessions, caching, and more, making web development faster and more enjoyable.",
+    "Flutter is Google's UI toolkit for building natively compiled applications for mobile, web, and desktop from a single codebase. It uses the Dart programming language.",
+    "Go (Golang) is an open-source programming language developed by Google. It's designed for simplicity, efficiency, and reliability, making it great for building scalable web services and applications.",
+    "Python is a high-level, interpreted programming language known for its simplicity and readability. It's widely used for web development, data analysis, artificial intelligence, and automation."
 ]
 
 export default function Toolbelt() {
@@ -66,93 +83,67 @@ export default function Toolbelt() {
     function clickFunc(index: number) {
         setPauseCurrent(5)
         if (current === index) {
-            var mouseClick = new Audio("sounds/mouse-click.mp3");
-            mouseClick.play();
+            playSound('mouse-click', 0.6);
             return;
         }
 
         setCurrent(index);
-        var mouseClick = new Audio("sounds/bubble.mp3");
-        mouseClick.play();
+        playSound('bubble', 0.6);
     }
 
 
     return (
-        <Card>
-            <CardContent className="p-6 max-md:p-4">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-md:gap-2">
-                    <div className="grid lg:grid-cols-2 gap-2">
-                        <div className="grid grid-cols-4 lg:grid-cols-2 gap-1 lg:gap-2 xl:gap-4">
-                            {Array.from(stacks).map((_, index) => {
-                                return (
-                                    <div key={index} className={`m-1 p-1.5 md:p-2  rounded-sm bg-gradient-to-tl from-pink-400/40 via-purple-400/40 to-cyan-400/40 w-fit self-center select-none cursor-pointer hover:from-pink-400/60 group hover:shadow-md ring ${index == current ? "ring-2 ring-pink-400" : "ring-0"} transition-all duration-300 ease-in-out`} onClick={() => clickFunc(index)}>
-                                        <Image
-                                            priority
-                                            src={stacks[index]}
-                                            height={24}
-                                            width={24}
-                                            alt={stackNames[index]}
-                                            className={`group-hover:rotate-12 group-hover:animate-tilt transition-all  duration-300 ${index == current ? "scale-125" : ""}`}
-                                        />
-                                    </div>
-                                )
-                            })}
-                        </div>
-                        <Card className="flex flex-col items-center justify-center py-2 text-center select-none shadow-md max-xl:hidden">
+        <div className="space-y-3">
+            {/* Tech Stack Grid */}
+            <div className="grid grid-cols-4 sm:grid-cols-6 md:grid-cols-4 lg:grid-cols-6 gap-3">
+                {Array.from(stacks).map((_, index) => {
+                    return (
+                        <div
+                            key={index}
+                            className={`p-3 rounded-md bg-slate-600/30 hover:bg-slate-600/50 cursor-pointer group transition-all duration-300 ${index == current ? "ring-2 ring-cyan-400 bg-slate-600/60" : ""}`}
+                            onClick={() => clickFunc(index)}
+                        >
                             <Image
-                                key={current}
                                 priority
-                                src={stacks[current]}
-                                height={88}
-                                width={88}
-                                alt="Logo"
-                                className="transition-all duration-300 ease-in-out"
+                                src={stacks[index]}
+                                height={32}
+                                width={32}
+                                alt={stackNames[index]}
+                                className="group-hover:scale-110 transition-all duration-300 mx-auto"
                             />
-                            <div className="mt-2 font-medium text-center">{stackNames[current]}</div>
-                        </Card>
-                        <Card className="flex flex-col items-center justify-center py-2 text-center  select-none shadow-md max-sm:hidden xl:hidden">
-                            <Image
-                                key={current}
-                                priority
-                                src={stacks[current]}
-                                height={50}
-                                width={50}
-                                alt="Logo"
-                                className="transition-all duration-300 ease-in-out"
-                            />
-                            <div className="mt-2 font-medium text-center">{stackNames[current]}</div>
-                        </Card>
-                        <Card className="flex flex-col items-center justify-center py-2 text-center  select-none shadow-md sm:hidden">
-                            <Image
-                                key={current}
-                                priority
-                                src={stacks[current]}
-                                height={40}
-                                width={40}
-                                alt="Logo"
-                                className="transition-all duration-300 ease-in-out"
-                            />
-                            <div className="mt-2 font-medium text-center max-sm:text-xs">{stackNames[current]}</div>
-                        </Card>
-                    </div>
-                    <div className="lg:flex-1 h-full justify-between">
-                        <div className="grid grid-flow-row my-1 xl:my-4">
-                            <div>
-                                <div className="text-lg font-semibold">{stackNames[current]}</div>
-                                <div className="text-xs md:text-sm ">
-                                    {stackDef[current]}
-                                </div>
-                            </div>
                         </div>
-                        <div className="text-xs md:text-sm">
-                            <div className=" max-sm:hidden">
-                                <div>Product Site:</div>
-                                <a href={stackLinks[current]} className="text-blue-500">{stackLinks[current]}</a>
-                            </div>
-                        </div>
+                    )
+                })}
+            </div>
+
+            {/* Current Tech Info */}
+            <div className="bg-slate-600/20 rounded-md p-3">
+                <div className="flex items-center gap-3 mb-2">
+                    <Image
+                        key={current}
+                        priority
+                        src={stacks[current]}
+                        height={40}
+                        width={40}
+                        alt={stackNames[current]}
+                        className="transition-all duration-300"
+                    />
+                    <div>
+                        <div className="text-white font-medium text-sm">{stackNames[current]}</div>
+                        <a
+                            href={stackLinks[current]}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-cyan-400 hover:text-cyan-300 text-xs transition-colors"
+                        >
+                            Visit Website
+                        </a>
                     </div>
                 </div>
-            </CardContent>
-        </Card>
+                <p className="text-white/70 text-xs leading-relaxed">
+                    {stackDef[current]}
+                </p>
+            </div>
+        </div>
     )
 }
