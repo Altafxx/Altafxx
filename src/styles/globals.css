@@ -183,6 +183,13 @@ body {
   }
 }
 
+/* Allow scrolling inside v3 page only (body remains hidden overflow to not affect other versions) */
+.v3-scroll {
+  -webkit-overflow-scrolling: touch;
+  overflow-y: auto;
+}
+
+
 /* Custom styles for v2 interface */
 .v2-interface {
   font-family: 'JetBrains Mono', monospace;
@@ -554,18 +561,17 @@ body {
 /* V3 Bento Grid Layout */
 .bento-grid {
   display: grid;
-  grid-template-columns: repeat(6, 1fr);
-  grid-template-rows: repeat(5, minmax(120px, 1fr));
+  /* 7 full columns + slim social column (as before) */
+  grid-template-columns: repeat(7, 1fr) 0.33fr;
+  grid-template-rows: repeat(3, auto);
   grid-template-areas:
-    "personal personal personal tech tech tech"
-    "personal personal personal contact contact contact"
-    "projects projects projects projects education education"
-    "experience experience experience experience education education"
-    "experience experience experience experience university university";
-  height: calc(100vh - 2rem);
+    "personal tech tech tech tech education education social"
+    "experience experience experience projects projects projects university university"
+    "experience experience experience projects projects projects university university";
+  height: auto;
   gap: 1rem;
-  max-width: 1400px;
-  margin: 0 auto;
+  width: 100%;
+  margin: 0;
 }
 
 .bento-personal {
@@ -579,6 +585,17 @@ body {
 .bento-contact {
   grid-area: contact;
 }
+
+.bento-social {
+  grid-area: social;
+}
+
+/* Make Social content 1/3 width inside its cell (as before) */
+.bento-social>* {
+  margin-left: auto;
+  margin-right: auto;
+}
+
 
 .bento-experience {
   grid-area: experience;
@@ -599,16 +616,15 @@ body {
 /* Tablet Layout */
 @media (max-width: 1024px) {
   .bento-grid {
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(5, minmax(120px, 1fr));
+    /* Tablet: same as before */
+    grid-template-columns: repeat(7, 1fr) 0.33fr;
+    grid-template-rows: repeat(3, auto);
     grid-template-areas:
-      "personal personal tech tech"
-      "personal personal contact contact"
-      "experience experience education university"
-      "experience experience education university"
-      "projects projects projects projects";
-    height: calc(100vh - 3rem);
-    max-height: calc(100vh - 3rem);
+      "personal tech tech tech tech education education social"
+      "experience experience experience projects projects projects university university"
+      "experience experience experience projects projects projects university university";
+    height: auto;
+    max-height: none;
   }
 }
 
@@ -616,18 +632,17 @@ body {
 @media (max-width: 768px) {
   .bento-grid {
     grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(8, minmax(100px, 1fr));
+    grid-template-rows: auto auto auto auto auto auto auto;
     grid-template-areas:
       "personal personal"
-      "personal personal"
+      "social social"
       "tech tech"
-      "contact contact"
-      "projects projects"
-      "education university"
+      "education education"
       "experience experience"
-      "experience experience";
-    height: calc(100vh - 2rem);
-    max-height: calc(100vh - 2rem);
+      "projects projects"
+      "university university";
+    height: auto;
+    max-height: none;
   }
 }
 

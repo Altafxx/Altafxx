@@ -167,12 +167,7 @@
                 "month": "February",
                 "year": 2023
             },
-            "achievement": [
-                {
-                    "position": "Batch Representative",
-                    "association": "October 2020 - February 2023"
-                }
-            ]
+            "achievement": []
         }
     ],
     "university_experience": [
@@ -242,6 +237,21 @@
             "activities": [
                 "Tuah Championship 2022",
                 "Tuah Championship 2021"
+            ]
+        },
+        {
+            "organization": "Batch Representative",
+            "position": "Representative",
+            "start": {
+                "month": "October",
+                "year": 2020
+            },
+            "end": {
+                "month": "February",
+                "year": 2023
+            },
+            "activities": [
+                "Served as Batch Representative for the cohort"
             ]
         }
     ],

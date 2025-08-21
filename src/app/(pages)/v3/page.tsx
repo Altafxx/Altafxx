@@ -5,13 +5,13 @@ import TechStackCard from "@/components/v3/tech-stack-card"
 import ExperienceCard from "@/components/v3/experience-card"
 import ProjectsCard from "@/components/v3/projects-card"
 import EducationCard from "@/components/v3/education-card"
-import ContactCard from "@/components/v3/contact-card"
 import UniversityCard from "@/components/v3/university-card"
+import SocialRail from "@/components/v3/social-rail"
 
 export default function V3Portfolio() {
   return (
-    <main className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 p-4 md:p-6 lg:p-8">
-      <div className="max-w-7xl mx-auto h-full">
+    <main className="h-[100dvh] md:min-h-screen md:h-auto bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 p-4 overflow-y-auto v3-scroll">
+      <div className="w-full">
         {/* Bento Grid Container */}
         <div className="bento-grid">
           {/* Personal Info - spans 3 columns, 2 rows */}
@@ -28,12 +28,12 @@ export default function V3Portfolio() {
             <TechStackCard />
           </div>
 
-          {/* Contact - spans 3 columns, 1 row (horizontal) */}
-          <div className="bento-contact">
-            <ContactCard social={profile.social} />
+          {/* Social rail */}
+          <div className="bento-social">
+            <SocialRail social={profile.social} />
           </div>
 
-          {/* Projects - spans 3 columns, 1 row */}
+          {/* Projects and Experience arranged side-by-side */}
           <div className="bento-projects">
             <ProjectsCard projects={profile.open_source} />
           </div>
