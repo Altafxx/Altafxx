@@ -2,20 +2,44 @@
 import React, { useState } from 'react'
 import { Card } from "@/components/ui/card"
 import Image from 'next/image'
+import typeScriptLogo from '@/../public/images/logo/light/typescript.svg'
+import nextjsLogo from '@/../public/images/logo/light/nextjs.svg'
+import tailwindLogo from '@/../public/images/logo/light/tailwind.svg'
+import postgreSQLLogo from '@/../public/images/logo/light/postgresql.svg'
+import dockerLogo from '@/../public/images/logo/light/docker.svg'
+import gitLogo from '@/../public/images/logo/light/git.svg'
+import vercelLogo from '@/../public/images/logo/light/vercel.svg'
+import shadcnuiLogo from '@/../public/images/logo/light/shadcnui.svg'
+import laravelLogo from '@/../public/images/logo/light/laravel.svg'
+import flutterLogo from '@/../public/images/logo/light/flutter.svg'
+import goLangLogo from '@/../public/images/logo/light/golang.svg'
+import pythonLogo from '@/../public/images/logo/light/python.svg'
 
 const stacks = [
-  "/images/logo/light/typescript.svg",
-  "/images/logo/light/nextjs.svg",
-  "/images/logo/light/tailwind.svg",
-  "/images/logo/light/postgresql.svg",
-  "/images/logo/light/docker.svg",
-  "/images/logo/light/git.svg",
-  "/images/logo/light/vercel.svg",
-  "/images/logo/light/shadcnui.svg",
-  "/images/logo/light/laravel.svg",
-  "/images/logo/light/flutter.svg",
-  "/images/logo/light/golang.svg",
-  "/images/logo/light/python.svg"
+  typeScriptLogo,
+  nextjsLogo,
+  tailwindLogo,
+  postgreSQLLogo,
+  dockerLogo,
+  gitLogo,
+  vercelLogo,
+  shadcnuiLogo,
+  laravelLogo,
+  flutterLogo,
+  goLangLogo,
+  pythonLogo
+  // "/images/logo/light/typescript.svg",
+  // "/images/logo/light/nextjs.svg",
+  // "/images/logo/light/tailwind.svg",
+  // "/images/logo/light/postgresql.svg",
+  // "/images/logo/light/docker.svg",
+  // "/images/logo/light/git.svg",
+  // "/images/logo/light/vercel.svg",
+  // "/images/logo/light/shadcnui.svg",
+  // "/images/logo/light/laravel.svg",
+  // "/images/logo/light/flutter.svg",
+  // "/images/logo/light/golang.svg",
+  // "/images/logo/light/python.svg"
 ]
 
 const stackNames = [
@@ -58,11 +82,11 @@ export default function TechStackCard() {
                 <Image
                   src={stack}
                   height={32}
-                  width={32}
+                  width={index === 10 ? 80 : 32}
                   alt={stackNames[index]}
                   className="mx-auto transition-all duration-300 group-hover:scale-110"
                 />
-                
+
                 {/* Tooltip */}
                 {hoveredIndex === index && (
                   <div className="absolute -top-8 left-1/2 transform -translate-x-1/2 bg-slate-900 text-white text-xs px-2 py-1 rounded whitespace-nowrap z-10">

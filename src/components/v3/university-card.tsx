@@ -15,16 +15,16 @@ interface UniversityCardProps {
 
 export default function UniversityCard({ experience }: UniversityCardProps) {
   return (
-    <Card className="h-full bg-gradient-to-br from-slate-800/90 to-slate-900/90 border-slate-700/50 backdrop-blur-sm overflow-hidden">
+    <Card className="h-auto md:h-full bg-gradient-to-br from-slate-800/90 to-slate-900/90 border-slate-700/50 backdrop-blur-sm overflow-hidden">
       <div className="h-full flex flex-col p-6">
         {/* Header */}
         <div className="mb-4">
-          <h2 className="text-lg font-bold text-white mb-2">University</h2>
+          <h2 className="text-lg font-bold text-white mb-2">University Experience</h2>
           <div className="w-8 h-0.5 bg-gradient-to-r from-cyan-400 to-purple-400"></div>
         </div>
 
         {/* University Experience List */}
-        <div className="flex-1 overflow-y-auto space-y-4 pr-2 custom-scrollbar">
+        <div className="space-y-4">
           {experience.map((item, index) => (
             <div key={index} className="bg-slate-700/30 rounded-lg p-4 hover:bg-slate-700/50 transition-all duration-300">
               {/* Organization */}

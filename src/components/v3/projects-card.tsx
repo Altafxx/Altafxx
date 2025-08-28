@@ -15,7 +15,7 @@ interface ProjectsCardProps {
 
 export default function ProjectsCard({ projects }: ProjectsCardProps) {
   return (
-    <Card className="h-full bg-gradient-to-br from-slate-800/90 to-slate-900/90 border-slate-700/50 backdrop-blur-sm overflow-hidden">
+    <Card className="h-auto md:h-full bg-gradient-to-br from-slate-800/90 to-slate-900/90 border-slate-700/50 backdrop-blur-sm overflow-hidden">
       <div className="h-full flex flex-col p-6">
         {/* Header */}
         <div className="mb-4">
@@ -24,7 +24,7 @@ export default function ProjectsCard({ projects }: ProjectsCardProps) {
         </div>
 
         {/* Projects List */}
-        <div className="flex-1 overflow-y-auto space-y-4 pr-2 custom-scrollbar">
+        <div className="space-y-4">
           {projects.map((project, index) => (
             <div key={index} className="bg-slate-700/30 rounded-lg p-4 hover:bg-slate-700/50 transition-all duration-300 group">
               {/* Project Name */}
