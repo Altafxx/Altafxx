@@ -1,4 +1,8 @@
-# Unify alt email to main identity for repository-level attribution
-# Format: Canonical Name <canonical@email> <old@email>
+# Unify contributor identities for GitHub via .mailmap
+# Format:
+#   Canonical Name <canonical@email> <old@email>
+#   OR Canonical Name <canonical@email> Old Name <old@email>
 Daniel Altaf <altafhasnan@gmail.com> <daniel.hasnan@qbeep.com>
-
+Daniel Altaf <altafhasnan@gmail.com> <36320199+Altafxx@users.noreply.github.com>
+Daniel Altaf <altafhasnan@gmail.com> altaf <altafhasnan@gmail.com>
+Daniel Altaf <altafhasnan@gmail.com> altafxx <altafhasnan@gmail.com>
