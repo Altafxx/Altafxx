@@ -1,47 +1,43 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Daniel Altaf — Portfolio (Next.js)
 
-## Getting Started
+Personal portfolio website powering https://altafxx.github.io. Built with Next.js App Router and Tailwind CSS, designed in a bento-style layout optimized for desktop and mobile with consistent padding and larger components to reduce scrolling.
 
-First, run the development server:
+> Default route rewrites to `/v3` (latest UI).
 
+## Tech Stack
+- Next.js 14 (App Router, TypeScript)
+- React 18
+- Tailwind CSS 3 + tailwindcss-animate + custom theme
+- Radix UI primitives, Lucide icons
+- Zustand (state)
+- Embla Carousel (with autoplay)
+- @vercel/og for dynamic Open Graph images
+
+## Project Structure
+- `src/app/(pages)/v1|v2|v3` — site versions; `/` rewrites to `/v3`
+- `src/components/v3/*` — v3 UI components (cards, rails, stacks, etc.)
+- `src/data/profile_v2.json` — profile, experience, skills, social links
+- `src/styles/globals.css` — global styles
+- `tailwind.config.ts` — theme, tokens, and plugins
+- `next.config.js` — images unoptimized, root rewrite to `/v3`
+
+## Local Development
 ```bash
+# Install deps
+npm install
+
+# Start dev server
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+# http://localhost:3000
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
-
+## Build
+```bash
+# Production build (SSR/ISR disabled in this project)
+npm run build
+```
 
 ## Contributors
+- Daniel Altaf ([@Altafxx](https://github.com/Altafxx)) — <altafhasnan@gmail.com>
 
-This project is maintained by:
-
-- Daniel Altaf ([@Altafxx](https://github.com/Altafxx)) — <mailto:altafhasnan@gmail.com>
-
-<a href="https://github.com/Altafxx" title="Daniel Altaf">
-  <img src="https://avatars.githubusercontent.com/u/36320199?v=4" alt="Daniel Altaf" width="72" height="72" style="border-radius:50%" />
-</a>
+Attribution note: commit identities are unified via `.mailmap` and a history rewrite; some GitHub UI widgets may cache contributor data temporarily.
