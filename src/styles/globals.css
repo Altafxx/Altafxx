@@ -563,12 +563,12 @@ body {
   display: grid;
   /* 7 full columns + slim social column (as before) */
   grid-template-columns: repeat(7, 1fr) 0.33fr;
-  grid-template-rows: repeat(3, auto);
+  grid-template-rows: auto 1fr 1fr;
   grid-template-areas:
     "personal tech tech tech tech education education social"
     "experience experience experience projects projects projects university university"
     "experience experience experience projects projects projects university university";
-  height: auto;
+  height: 100%;
   gap: 1rem;
   width: 100%;
   margin: 0;

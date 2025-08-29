@@ -10,8 +10,8 @@ import SocialRail from "@/components/v3/social-rail"
 
 export default function V3Portfolio() {
   return (
-    <main className="h-[100dvh] md:min-h-screen md:h-auto bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 p-4 overflow-y-auto v3-scroll">
-      <div className="w-full">
+    <main className="h-[100dvh] md:h-[100dvh] bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 p-4 overflow-y-auto md:overflow-hidden v3-scroll">
+      <div className="w-full h-full">
         {/* Bento Grid Container */}
         <div className="bento-grid">
           {/* Personal Info - spans 3 columns, 2 rows */}
