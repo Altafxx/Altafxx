@@ -7,11 +7,13 @@ import ProjectsCard from "@/components/v3/projects-card"
 import EducationCard from "@/components/v3/education-card"
 import UniversityCard from "@/components/v3/university-card"
 import SocialRail from "@/components/v3/social-rail"
+import DitherBackground from "@/components/dither-background"
 
 export default function V3Portfolio() {
   return (
-    <main className="h-[100dvh] md:h-[100dvh] bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 p-4 overflow-y-auto md:overflow-hidden v3-scroll">
-      <div className="w-full h-full">
+    <main className="h-[100dvh] md:h-[100dvh] text-stone-100 p-4 overflow-y-auto md:overflow-hidden v3-scroll relative">
+      <DitherBackground />
+      <div className="w-full h-full relative z-10">
         {/* Bento Grid Container */}
         <div className="bento-grid">
           {/* Personal Info - spans 3 columns, 2 rows */}

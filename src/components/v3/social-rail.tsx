@@ -44,7 +44,7 @@ function getIcon(name: string) {
 export default function SocialRail({ social }: SocialRailProps) {
   const visible = social.filter((s) => s.show)
   return (
-    <Card className="h-full bg-gradient-to-br from-slate-800/90 to-slate-900/90 border-slate-700/50 backdrop-blur-sm overflow-hidden">
+    <Card className="h-full v3-card-depth bg-gradient-to-br from-stone-800/95 to-stone-900/95 border-stone-600/50 backdrop-blur-sm overflow-hidden">
       <div className="h-full w-full flex flex-row md:flex-col flex-wrap items-center justify-center p-2 gap-3">
         {visible.map((item, idx) => (
           <a
@@ -52,7 +52,7 @@ export default function SocialRail({ social }: SocialRailProps) {
             href={item.link.join("")}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-white/70 hover:text-cyan-400 transition-all duration-300 hover:scale-110 p-2 md:p-1 rounded-lg hover:bg-slate-700/30"
+            className="text-stone-300 hover:text-amber-400 transition-all duration-300 hover:scale-110 p-2 md:p-1 rounded-lg hover:bg-stone-700/30"
             title={item.name}
           >
             {getIcon(item.name)}
