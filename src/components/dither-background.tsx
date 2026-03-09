@@ -17,7 +17,7 @@ const Dither = dynamic(
 
 export default function DitherBackground() {
   return (
-    <div className="absolute inset-0 w-full h-full -z-[1] blur-md scale-110">
+    <div className="fixed inset-0 w-full h-full -z-[1] blur-md scale-110 pointer-events-none">
       <Dither
         waveSpeed={0.05}
         waveFrequency={3}
