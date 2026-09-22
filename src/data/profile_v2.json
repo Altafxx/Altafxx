@@ -44,6 +44,30 @@
     ],
     "experience": [
         {
+            "company": "Data Flows Sdn Bhd",
+            "position": "Software Engineer",
+            "start": {
+                "timestamp": 1759284000000,
+                "month": "October",
+                "year": 2025
+            },
+            "end": {
+                "timestamp": 1788228000000,
+                "month": "September",
+                "year": 2026
+            },
+            "duration": "1 Year",
+            "contribution": [
+                "Developed and maintained key features for Gamuda HR GEMS which ease HR to streamline reimbursement to employees, track and manage business expenses and ensure paperless transaction for better enviroment impact",
+                "Manage deployment through Google Cloud Platform utilizing Cloud Run, Cloud SQL, Cloud Storage, Cloud Task, Cloud Build and Firebase",
+                "Collaborated with the Tech Lead to manage stakeholder expectations, serving as the secondary point of contact to ensure project continuity and timely delivery of technical milestones",
+                "Develop new feature for latest company campaign and maintained existing landing page for AIA which directly interact with their customers",
+                "Participated in technical discovery and scoping sessions to gather end-user requirements, translating business needs into actionable engineering specifications",
+                "Defined project scope and technical milestones, assigning tasks to engineering team members and monitoring progress against delivery timelines",
+                "Adapted to shifting business priorities and late-stage requirement changes with zero disruption to core milestone deadlines"
+            ]
+        },
+        {
             "company": "Qbeep Intelligent Systems Sdn Bhd",
             "position": "Software Engineer cum. DevOps Engineer",
             "start": {
@@ -52,9 +76,9 @@
                 "year": 2024
             },
             "end": {
-                "timestamp": null,
-                "month": "present",
-                "year": null
+                "timestamp": 1756173600000,
+                "month": "August",
+                "year": 2025
             },
             "duration": "1 Year 7 Months",
             "contribution": [
@@ -128,13 +152,13 @@
                 "Development involvement for Risda e-Banci (banci.risda.gov.my)",
                 "Development involvement for RTM ETVCMS (etvcms.rtm.gov.my)",
                 "Discussion on RTM ETVCMS server architecture",
-                "Development of Digital Security Platform (dsv.vireserve.com)",
+                "Development of Digital Security Platform (dxp.vireserve.com)",
                 "Served as a document owner for the ISO 27001 certification process, contributing to the development and maintenance of key documentation for both internal ISMS audits and the SIRIM audit"
             ]
         },
         {
             "company": "Vireserve Sdn Bhd",
-            "position": "Intern",
+            "position": "Internship",
             "start": {
                 "timestamp": 1662948000000,
                 "month": "September",
@@ -257,30 +281,6 @@
     ],
     "open_source": [
         {
-            "name": "Cari Surau",
-            "site": [
-                "https://",
-                "carisurau.com"
-            ],
-            "description": "One stop platform for searching surau around Malaysia"
-        },
-        {
-            "name": "Malaysia API",
-            "site": [
-                "https://",
-                "malaysiaapi.danielaltaf.dev"
-            ],
-            "description": "Centralize API of open data from Government of Malaysia, Non Government Organization and third party sources"
-        },
-        {
-            "name": "Ideaspace",
-            "site": [
-                "https://",
-                "ideaspace.nrmngdds.com"
-            ],
-            "description": "Project idea dumping site where one's idea could be a reality"
-        },
-        {
             "name": "Sedekah Je",
             "site": [
                 "https://",
@@ -295,6 +295,30 @@
                 "aevumflow.danielaltaf.dev"
             ],
             "description": "Malaysian platform that facilitates QR code-based donations, making charitable giving more accessible and convenient"
+        },
+        {
+            "name": "Malaysia API (Rebranding)",
+            "site": [
+                "https://",
+                "malaysiaapi.danielaltaf.dev"
+            ],
+            "description": "Centralize API of open data from Government of Malaysia, Non Government Organization and third party sources"
+        },
+        {
+            "name": "Cari Surau (Deprecated)",
+            "site": [
+                "https://",
+                "carisurau.com"
+            ],
+            "description": "One stop platform for searching surau around Malaysia"
+        },
+        {
+            "name": "Ideaspace (Deprecated)",
+            "site": [
+                "https://",
+                "ideaspace.nrmngdds.com"
+            ],
+            "description": "Project idea dumping site where one's idea could be a reality"
         }
     ],
     "skill": {
